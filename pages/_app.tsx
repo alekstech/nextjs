@@ -6,7 +6,7 @@ import { Provider as AuthProvider } from '../contexts/authentication';
 const MyApp = function({ Component, pageProps }: AppProps):ReactElement {
   return (
     <AuthProvider>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </AuthProvider>
   );
 };

@@ -20,17 +20,14 @@ const Home: NextPage = () => {
           web developer
         </p>
 
-
         <p>Toronto</p>
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://www.linkedin.com/in/aleksander-sobieraj/"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/blog/portfolio"
         >
-          LinkedIn
+          About
         </a>
       </footer>
     </div>

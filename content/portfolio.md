@@ -1,0 +1,60 @@
+---
+title: Portfolio
+description: My attempt at rebuilding Amazon.com
+summary: A website showcasing web dev I'm interested in
+image: ""
+imageAlt: ""
+---
+
+# Portfolio
+
+## Contents
+
+This portfolio will contain
+
+*   this file, with references,
+*   a link to [my LinkedIn page](https://www.linkedin.com/in/aleksander-sobieraj/),
+*   [things I would like people to read](/blog).
+
+This is an unfinished project meant to explore and showcase web development skills.
+
+## Stack
+
+Tools I used to make this portfolio
+
+*   [webpack](https://webpack.js.org/) for bundling and as a dev server
+*   [TypeScript](https://www.typescriptlang.org/) for input-output compatibility
+*   [React](https://reactjs.org/) for UI data binding
+*   [unified](https://unifiedjs.com/) with [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype) for turning markdown files into blog pages like this one
+*   [Next.js](https://nextjs.org/) for routing and pre-rendering
+*   [Cognito](https://aws.amazon.com/cognito/) and [Amplify](https://aws.amazon.com/amplify/) for authentication
+*   [S3](https://aws.amazon.com/s3/) and [CloudFront](https://aws.amazon.com/cloudfront/) for hosting
+*   [DynamoDB](https://aws.amazon.com/dynamodb/) for data storage
+*   [Lambda](https://aws.amazon.com/lambda/) and [API Gateway](https://aws.amazon.com/api-gateway/) for interacting with the database
+*   [Route53](https://aws.amazon.com/route53/) for DNS
+*   [serverless](https://www.serverless.com/) for CloudFormation templates
+
+This portfolio does not include
+
+*   a CSS library, because this portfolio is sparsely styled,
+*   custom deployment scripts, because serverless has good enough defaults,
+*   spelling mistakes 😉 or authentication tokens 🤞.
+
+## Roadmap
+
+My to-do list for this portfolio
+
+*   optimized images
+*   a Three.js button
+*   a D3 graph
+*   a service worker
+*   a offline cache
+*   [a request queue](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync) for API calls
+*   request limts
+*   lazy loading
+*   pre-fetched, small bundles
+*   a sitemap
+*   accessible HTML
+*   pastel colours
+*   several modern CSS features
+*   a Dockerfile
