@@ -9,8 +9,7 @@
     "telemetry": "next telemetry",
     "info": "next info",
     "dev": "nodemon",
-    "deploy": "export AWS_SDK_LOAD_CONFIG=1 && npx serverless@2.72.2",
-    "x": "components-v1"
+    "deploy": "export AWS_SDK_LOAD_CONFIG=1 && npx serverless@2.72.2"
   },
   "dependencies": {
     "@aws-amplify/auth": "^4.3.20",
