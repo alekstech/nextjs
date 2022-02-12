@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import PrefetchedLink from '../components/PrefetchedLink';
 import styles from './Home.module.css';
 
 const Home: NextPage = () => {
@@ -24,11 +25,9 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="/blog/portfolio"
-        >
+        <PrefetchedLink href="/blog/portfolio">
           About
-        </a>
+        </PrefetchedLink>
       </footer>
     </div>
   );
