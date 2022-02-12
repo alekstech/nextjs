@@ -26,6 +26,7 @@ Tools I used to make this portfolio
 *   [TypeScript](https://www.typescriptlang.org/) for input-output compatibility
 *   [React](https://reactjs.org/) for UI data binding
 *   [MDX](https://mdxjs.com/) for blog pages like this one
+*   HTML written with accessibility in mind
 *   [Next.js](https://nextjs.org/) for routing and pre-rendering
 *   [Cognito](https://aws.amazon.com/cognito/) and [Amplify](https://aws.amazon.com/amplify/) for authentication
 *   [S3](https://aws.amazon.com/s3/) and [CloudFront](https://aws.amazon.com/cloudfront/) for hosting
@@ -34,9 +35,8 @@ Tools I used to make this portfolio
 *   [Route53](https://aws.amazon.com/route53/) for DNS
 *   [serverless](https://www.serverless.com/) for CloudFormation templates
 
-This portfolio does not include
+This portfolio does not (yet) include
 
-*   a CSS library, because this portfolio is sparsely styled,
 *   custom deployment scripts, because serverless has good enough defaults,
 *   spelling mistakes 😉 or authentication tokens 🤞.
 
@@ -44,17 +44,20 @@ This portfolio does not include
 
 My to-do list for this portfolio
 
-*   optimized images
-*   a Three.js button
-*   a D3 graph
-*   a service worker
-*   a offline cache
+*   lazy loaded components and pre-fetched, small bundles
+*   a styling framework with the following layers and CSS Properties for each layer
+    *    a dynamic colour palette
+    *    a typography palette
+    *    a spacing scale
+    *    interactive element styles and components
+    *    keyframes
+    *    layout components from [Every Layout](https://every-layout.dev/) from an npm package (credit missing)
+    *    grid layout using @react-css/grid
 *   [a request queue](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync) for API calls
-*   request limts
-*   lazy loading
-*   pre-fetched, small bundles
+*   an offline cache
+*   optimized images
+*   a Three.js fidget cube
+*   a D3 graph
 *   a sitemap
-*   accessible HTML
-*   pastel colours
 *   several modern CSS features
-*   a Dockerfile
+*   a Dockerfile ;)
