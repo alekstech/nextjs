@@ -1,13 +1,16 @@
 import { ReactElement } from 'react';
-import '../styles/globals.css';
+import '../styles/index.css';
 import type { AppProps } from 'next/app';
 import { Provider as AuthProvider } from '../contexts/authentication';
+import usePreferredColorScheme from './usePreferredColorScheme';
 
-const MyApp = function({ Component, pageProps }: AppProps):ReactElement {
+const CustomApp = function({ Component, pageProps }: AppProps):ReactElement {
+  usePreferredColorScheme();
+
   return (
     <AuthProvider>
       <Component {...pageProps} />
     </AuthProvider>
   );
 };
-export default MyApp;
+export default CustomApp;

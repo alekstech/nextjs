@@ -1,3 +1,5 @@
+import Layout from '../../components/BlogPage'
+
 export const meta = {
   title: "Portfolio",
   description: "My attempt at rebuilding Amazon.com",
@@ -12,7 +14,7 @@ export const meta = {
 
 This portfolio will contain
 
-*   this file, with references,
+*   this file,
 *   a link to [my LinkedIn page](https://www.linkedin.com/in/aleksander-sobieraj/),
 *   [things I would like people to read](/blog).
 
@@ -27,8 +29,7 @@ Tools I used to make this portfolio
 *   [React](https://reactjs.org/) for UI data binding
 *   [MDX](https://mdxjs.com/) for blog pages like this one
 *   HTML written with accessibility in mind
-*   [Next.js](https://nextjs.org/) for routing and pre-rendering
-*   pre-fetched, small bundles ([more](/blog/server))
+*   [Next.js](https://nextjs.org/) for routing bundling and [more](/blog/server)
 *   [Cognito](https://aws.amazon.com/cognito/) and [Amplify](https://aws.amazon.com/amplify/) for authentication
 *   [S3](https://aws.amazon.com/s3/) and [CloudFront](https://aws.amazon.com/cloudfront/) for hosting
 *   [DynamoDB](https://aws.amazon.com/dynamodb/) for data storage
@@ -38,8 +39,8 @@ Tools I used to make this portfolio
 
 This portfolio does not (yet) include
 
-*   custom deployment scripts, because serverless has good enough defaults,
-*   spelling mistakes 😉 or authentication tokens 🤞.
+*   custom deployment scripts, because serverless has good enough defaults for now,
+*   spelling mistakes or authentication tokens 🤞.
 
 ## Roadmap
 
@@ -61,3 +62,5 @@ My to-do list for this portfolio
 *   a sitemap
 *   several modern CSS features
 *   a Dockerfile ;)
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

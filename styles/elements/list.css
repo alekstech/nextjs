@@ -1,0 +1,25 @@
+main ol,
+main ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+main ol ol,
+main ul ol {
+  list-style-type: lower-roman;
+}
+
+main ol ol ol,
+main ol ul ol,
+main ul ol ol,
+main ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+main li > p {
+  margin-top: var(--s-1);
+}
+
+main li+li {
+  margin-top: var(--s-1);
+}

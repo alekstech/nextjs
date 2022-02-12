@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import PrefetchedLink from '../../components/PrefetchedLink';
 import { Stack, Cluster } from "../../components/Layout";
 import BlogPage from "../../components/BlogPage";
 import StaggeredList from "../../components/StaggeredList";
@@ -79,11 +79,9 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
     <BlogPage {...meta}>
       <Stack>
         <h1>Entries</h1>
-        <Link href="/journal/new">
-          <a className="display-inline-block">
-            Create
-          </a>
-        </Link>
+        <PrefetchedLink href="/journal/new">
+          Create
+        </PrefetchedLink>
         {loading &&
           <p>Loading</p>
         }
@@ -100,23 +98,19 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
           <StaggeredList>
             {
               list.map(({ EntryBody, EntryId }) => (
-                <div key={EntryBody} className="display-flex flex-direction-column mb1">
+                <Stack key={EntryBody}>
                   <p>
                     {EntryBody}
                   </p>
                   <Cluster>
-                    <Link href={`/journal/${EntryId}`}>
-                      <a>
-                        Edit
-                      </a>
-                    </Link>
-                    <Link href={`/journal/${EntryId}/delete`}>
-                      <a>
-                        Delete
-                      </a>
-                    </Link>
+                    <PrefetchedLink href={`/journal/${EntryId}`}>
+                      Edit
+                    </PrefetchedLink>
+                    <PrefetchedLink href={`/journal/${EntryId}/delete`}>
+                      Delete
+                    </PrefetchedLink>
                   </Cluster>
-                </div>
+                </Stack>
               ))
             }
           </StaggeredList>

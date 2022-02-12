@@ -100,7 +100,7 @@ const SignIn = function (props:SignInProps): JSX.Element {
     <div>
       <h2>Log in</h2>
       <form noValidate>
-        <label htmlFor="email" className="display-block">
+        <label htmlFor="email">
           Email
         </label>
         <input
@@ -114,7 +114,7 @@ const SignIn = function (props:SignInProps): JSX.Element {
         />
         <p role="alert">{ messages.email }</p>
 
-        <label htmlFor="email" className="display-block">
+        <label htmlFor="email">
           Password
         </label>
         <input

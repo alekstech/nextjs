@@ -1,6 +1,5 @@
 import { useTrail, animated, to } from '@react-spring/web';
 
-const items = ['Lorem', 'ipsum', 'dolor', 'sit'];
 const config = { mass: 5, tension: 2000, friction: 200 };
 
 export const StaggeredList = ({ children }: { children: JSX.Element[] }) => {
@@ -18,7 +17,7 @@ export const StaggeredList = ({ children }: { children: JSX.Element[] }) => {
     <ul>
       {trail.map(({ y, ...rest }, index) => (
         <animated.li
-          key={items[index]}
+          key={index}
           style={{
             ...rest,
             transform: to([y], y => `scaleY(${y})`),

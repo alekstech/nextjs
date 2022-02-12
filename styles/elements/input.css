@@ -1,0 +1,8 @@
+input {
+  padding: var(--s-2);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: "Helvetica", sans-serif;
+  border: var(--s-6) solid var(--text-color);
+}

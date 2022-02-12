@@ -3,7 +3,8 @@ import React from 'react';
 export const Component = ({
   size = 'var(--font-size-0)',
   background = 'var(--text-color)',
-  outline = 'var(--background-color)'
+  outline = 'var(--background-color)',
+  ariaHidden = true
 }) => {
   const css = `
     .a-logo {
@@ -20,6 +21,7 @@ export const Component = ({
       strokeWidth="3.75"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden={ariaHidden}
     >
       <style>
         {css}

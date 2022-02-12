@@ -1,0 +1,13 @@
+:root {
+  /* Text size */
+
+  --text-ratio: 1.15;
+
+  --font-size-0: 1rem;
+  --font-size-1: calc(var(--font-size-0) * var(--text-ratio));
+  --font-size-2: calc(var(--font-size-1) * var(--text-ratio));
+  --font-size-3: calc(var(--font-size-2) * var(--text-ratio));
+  --font-size-4: calc(var(--font-size-3) * var(--text-ratio));
+  --font-size-5: calc(var(--font-size-4) * var(--text-ratio));
+  --font-size-6: calc(var(--font-size-5) * var(--text-ratio));
+}

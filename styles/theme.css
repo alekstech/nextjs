@@ -1,0 +1,46 @@
+body, body.light {
+  --background-color: var(--white);
+
+  --text-color: var(--indigo-900);
+
+  --link-color: var(--text-color);
+  --link-visited-color: var(--text-color);
+
+  --button-background: var(--white);
+  --button-text: var(--text-color);
+
+  --outline-width: calc(var(--s-4) / var(--ratio));
+  --outline: var(--outline-width) solid var(--indigo-900);
+
+  background-color: var(--background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --background-color: var(--gray-900);
+  
+    --text-color: var(--white);
+  
+    --link-color: var(--text-color);
+    --link-visited-color: var(--text-color);
+  
+    --button-background: var(--indigo-900);
+    --button-text: var(--white);
+  
+    --outline: var(--outline-width) solid var(--text-color);
+  }
+}
+
+body.dark {
+  --background-color: var(--gray-900);
+
+  --text-color: var(--white);
+
+  --link-color: var(--text-color);
+  --link-visited-color: var(--text-color);
+
+  --button-background: var(--indigo-900);
+  --button-text: var(--white);
+
+  --outline: var(--outline-width) solid var(--text-color);
+}

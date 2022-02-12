@@ -15,19 +15,23 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 const CenterContainer = styled.div<Props>`
   display: block;
   box-sizing: content-box;
+  max-width: ${props => props.max};
+
   margin-left: auto;
   margin-right: auto;
+
   padding-left: ${props => props.gutters};
   padding-right: ${props => props.gutters};
-  max-width: ${props => props.max};
-  ${props => props.andText && `text-align: center;`}
-  ${props =>
-    props.intrinsic &&
-    `
+
+  ${props => props.andText && `
+    text-align: center;
+  `}
+
+  ${props => props.intrinsic && `
     display: flex;
     flex-direction: column;
     align-items: center;
-    `}
+  `}
 `;
 
 export const Center: React.FC<Props> = ({

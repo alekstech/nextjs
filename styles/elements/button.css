@@ -1,0 +1,27 @@
+button, a.button {
+  background-color: var(--button-background);
+  border-color: var(--button-text);
+  border-style: solid;
+  border-width: var(--s-6);
+  color: var(--button-text);
+  font-family: inherit;
+  font-size: var(--font-size-0);
+  line-height: inherit;
+  padding: var(--s-1);
+}
+
+button {
+  cursor: pointer;
+}
+
+a.button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover, button:active,
+a.button:hover, a.button:active {
+  background-color: var(--button-text);
+  color: var(--button-background);
+}

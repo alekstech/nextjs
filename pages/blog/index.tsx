@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import PrefetchedLink from '../../components/PrefetchedLink';
 import { BlogHead } from '../../components/blog/BlogHead';
-import Layout from '../../markdown/Layout';
+import Layout from '../../components/blog/BlogLayout';
 
 const frontMatter = {
   title: "Blog",
@@ -16,9 +16,9 @@ export const Page = () => {
       <BlogHead frontMatter={frontMatter} />
       <Layout>
         <main>
-          <Link href={`/blog/portfolio`}>
+          <PrefetchedLink href={`/blog/portfolio`}>
             Portfolio
-          </Link>
+          </PrefetchedLink>
         </main>
       </Layout>
     </>

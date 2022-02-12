@@ -1,0 +1,12 @@
+code, pre {
+  font-family: monospace;
+  font-size: var(--font-size-0);
+}
+
+pre {
+  margin-bottom: var(--s-1);
+}
+
+code {
+  white-space: pre-wrap;
+}

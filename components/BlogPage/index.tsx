@@ -1,6 +1,5 @@
 import Center from '../Layout/center';
 import Cover from '../Layout/cover';
-import Footer from '../Footer';
 import Header from '../Header';
 import PageHead, { Props as PageHeadProps } from '../PageHead';
 
@@ -21,7 +20,6 @@ export const BlogPage = ({ children, ...rest }: Props) => {
             {children}
           </Center>
         </main>
-        <Footer />
       </Cover>
     </>
   );

@@ -1,7 +1,7 @@
 /*
   Layout grid for blog pages
 */
-import styles from './Layout.module.css';
+import styles from './BlogLayout.module.css';
 
 type Props = {
   children: React.ReactChild | React.ReactChild[]

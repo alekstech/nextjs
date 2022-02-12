@@ -1,0 +1,13 @@
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration-color: var(--link-color);
+}
+
+a:link {
+  color: var(--link-color);
+}
+
+a:visited, a:hover, a:active {
+  color: var(--link-visited-color);
+  text-decoration-color: var(--text-color);
+}
