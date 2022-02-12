@@ -1,5 +1,5 @@
 import { useReducer, useContext, createContext } from 'react';
-import Auth from '@aws-amplify/auth';
+import AmplifyAuth from '@aws-amplify/auth';
 import initializeAmplify from "../../amplify";
 import registerAuthListeners from "./hub";
 
@@ -8,14 +8,14 @@ initializeAmplify();
 registerAuthListeners();
 
 interface State {
-  Auth: typeof Auth;
+  Auth: typeof AmplifyAuth;
 }
 interface Action {
   type: string
 }
 
 const initialState: State = {
-  Auth
+  Auth: AmplifyAuth
 };
 
 const actions = {
@@ -50,3 +50,4 @@ export const Provider = ( { children }
 
 export const useAuthState = () => useContext(AuthStateContext);
 export const useAuthReducer = () => useContext(AuthDispatchContext);
+export const Auth = AmplifyAuth;
