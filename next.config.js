@@ -1,5 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+const nextMdx = require('@next/mdx');
 
 // CSP directives: developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
 const getContentSecurityPolicy = (phase) => {
@@ -61,13 +62,26 @@ const getHeaders = async function (phase) {
   ];
 };
 
-module.exports = (phase) => {
+const base = (phase) => {
   /**
    * @type {import('next').NextConfig}
    */
   const nextConfig = {
+    pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
     reactStrictMode: true, // lint deprecated patterns
     headers: getHeaders(phase),
   };
   return nextConfig;
 };
+
+const mdxOptions = {
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    providerImportSource: "@mdx-js/react",
+  },
+};
+const config = nextMdx(mdxOptions)(base());
+
+module.exports = config;

@@ -8,8 +8,9 @@
     "lint": "next lint",
     "telemetry": "next telemetry",
     "info": "next info",
-    "dev": "npm run build && nodemon",
-    "deploy": "export AWS_SDK_LOAD_CONFIG=1 && serverless"
+    "dev": "nodemon",
+    "deploy": "export AWS_SDK_LOAD_CONFIG=1 && npx serverless@2.72.2",
+    "x": "components-v1"
   },
   "dependencies": {
     "@aws-amplify/auth": "^4.3.20",
@@ -23,7 +24,12 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@mdx-js/loader": "^2.0.0",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^12.0.10",
+    "@serverless/cli": "^1.6.0",
     "@types/express": "^4.17.13",
+    "@types/mdx-js__react": "^1.5.5",
     "@types/next": "^9.0.0",
     "@types/react": "^17.0.38",
     "@types/styled-components": "^5.1.21",
@@ -32,18 +38,9 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.7.0",
     "eslint-config-next": "^12.0.8",
-    "gray-matter": "^4.0.3",
-    "next-mdx-remote": "^3.0.8",
     "nodemon": "^2.0.15",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-sanitize": "^5.0.1",
-    "rehype-slug": "^5.0.1",
-    "rehype-stringify": "^9.0.3",
-    "remark-parse": "^8.0.3",
-    "remark-rehype": "^10.1.0",
-    "serverless": "^2.72.1",
+    "serverless": "^3.1.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.5",
-    "unified": "^10.1.1"
+    "typescript": "^4.5.5"
   }
 }
