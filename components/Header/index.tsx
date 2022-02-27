@@ -2,16 +2,17 @@ import React from 'react';
 import PrefetchedLink from '../PrefetchedLink';
 import Cluster from '../Layout/cluster';
 import ALogo from './ALogo';
+import UnstyledList from '../UnstyledList';
 
 const Header: React.FC = (): JSX.Element => {
   return (
     <header>
       <nav>
-        <ul>
+        <UnstyledList>
           <Cluster justify="space-between">
             <Cluster>
               <li>
-                <PrefetchedLink href='/'>
+                <PrefetchedLink href='/' block>
                   <>
                     <span className='visually-hidden'>Home</span>
                     <ALogo ariaHidden={true} />
@@ -25,14 +26,9 @@ const Header: React.FC = (): JSX.Element => {
                   Account
                 </PrefetchedLink>
               </li>
-              <li>
-                <PrefetchedLink href='/auth/logout'>
-                  Log out
-                </PrefetchedLink>
-              </li>
             </Cluster>
           </Cluster>
-        </ul>
+        </UnstyledList>
       </nav>
     </header>
   );

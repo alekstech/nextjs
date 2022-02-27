@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto Serif', serif;
   color: var(--text-color);
   word-break: break-word;
   font-size: var(--font-size-0);
@@ -15,6 +16,7 @@ h3,
 h4,
 h5, .h5,
 h6 {
+  font-family: 'Montserrat', serif;
   font-weight: 600;
   line-height: 1.25;
   margin-bottom: var(--s0);
@@ -48,9 +50,4 @@ h5, .h5 {
 
 h6 {
   font-size: var(--font-size-1);
-}
-
-p {
-  margin-bottom: var(--s-1);
-  margin-top: 0;
 }

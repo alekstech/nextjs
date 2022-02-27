@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import PrefetchedLink from '../components/PrefetchedLink';
 import styles from './Home.module.css';
+import Cluster from '../components/Layout/cluster';
 
 const Home: NextPage = () => {
   return (
@@ -25,9 +26,11 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        <PrefetchedLink href="/blog/portfolio">
-          About
-        </PrefetchedLink>
+        <Cluster justify="space-around">
+          <PrefetchedLink href="/blog/portfolio">
+            About
+          </PrefetchedLink>
+        </Cluster>
       </footer>
     </div>
   );
