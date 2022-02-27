@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 body {
   line-height: 1.5;
@@ -16,7 +16,7 @@ h3,
 h4,
 h5, .h5,
 h6 {
-  font-family: 'Montserrat', serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
   line-height: 1.25;
   margin-bottom: var(--s0);

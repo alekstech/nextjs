@@ -20,7 +20,7 @@
 
 .footer {
   width: 100%;
-  padding: var(--s-1) var(--s-1);
+  padding: var(--s-1);
   border-top: 1px solid #eaeaea;
 }
 
