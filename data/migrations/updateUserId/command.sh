@@ -1,0 +1,1 @@
+aws dynamodb transact-write-items --transact-items  file://~/nextjs/data/migrations/updateUserId/data.json

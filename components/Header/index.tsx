@@ -22,8 +22,8 @@ const Header: React.FC = (): JSX.Element => {
             </Cluster>
             <Cluster>
               <li>
-                <PrefetchedLink href='/auth/account'>
-                  Account
+                <PrefetchedLink href='/notes'>
+                  Notes
                 </PrefetchedLink>
               </li>
             </Cluster>

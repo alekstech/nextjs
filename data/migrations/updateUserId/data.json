@@ -1,0 +1,53 @@
+[
+  {
+    "Put": {
+      "TableName": "JournalEntries",
+      "Item": {
+        "EntryId": {
+          "S": "8fd53edf-1de1-4e87-890-27434ccf6b87"
+        },
+        "UserId": {
+          "S": "d1ab8eb2-fe59-4844-824c-12b7f729b536"
+        },
+        "UpdatedTime": {
+          "S": "2021-07-09T03:34:06.983Z"
+        },
+        "CreatedTime": {
+          "S": "2021-07-09T03:34:06.983Z"
+        },
+        "EntryBody": {
+          "S": "Lorem ipsum"
+        },
+        "IsFavorite": {
+          "N": "0"
+        }
+      },
+      "ConditionExpression": "#pk <> :pkValue AND #sk <> :skValue",
+      "ExpressionAttributeNames": {
+        "#pk": "EntryId",
+        "#sk": "UserId"
+      },
+      "ExpressionAttributeValues": {
+        ":pkValue": {
+          "S": "8fd53edf-1de1-4e87-890-27434ccf6b87"
+        },
+        ":skValue": {
+          "S": "d1ab8eb2-fe59-4844-824c-12b7f729b536"
+        }
+      }
+    }
+  },
+  {
+    "Delete": {
+      "TableName": "JournalEntries",
+      "Key": {
+        "EntryId": {
+          "S": "8fd53edf-1de1-4e87-890-27434ccf6b87"
+        },
+        "UserId": {
+          "S": "d0ab8eb2-fe59-4844-824c-12b7f729b536"
+        }
+      }
+    }
+  }
+]
