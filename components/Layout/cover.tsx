@@ -17,7 +17,7 @@ const StyledCover = styled.div<Props>(
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: calc(var(--dvh, 1vh) * 100);
   padding: ${props.noPad ? "0" : "var(--s1)"};
 
   & > * {

@@ -1,12 +1,10 @@
 .container {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  min-height: calc(var(--dvh, 1vh) * 100);
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .main {
