@@ -3,7 +3,7 @@ import { Hub } from '@aws-amplify/core';
 import Router from 'next/router';
 import cookie from 'cookie';
 
-const asdf= async () => {
+const handleSignIn = async () => {
   const session = await Auth.currentSession();
   const token = session.getIdToken();
   const jwt = await token.getJwtToken();
@@ -30,11 +30,29 @@ const asdf= async () => {
     });
 };
 
+const handleSignOut = async () => {
+  const expires = new Date(Date.now());
+  const serialized = cookie.serialize('Authorization', '', {
+    domain: ".aleks.tech",
+    sameSite: 'strict',
+    secure: true,
+    path: '/',
+    expires,
+    maxAge: 0
+  });
+  document.cookie = serialized;
+  console.log('Remove Authorization cookie');
+};
+
 export const registerAuthListeners = () => {
   Hub.listen("auth", async ({ payload: { event } }) => {
     switch (event) {
+      case "signOut": {
+        handleSignOut();
+        break;
+      }
       case "signIn": {
-        asdf();
+        handleSignIn();
         break;
       }
       case 'signUp':
