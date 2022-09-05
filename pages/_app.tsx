@@ -9,7 +9,7 @@ const CustomApp = function({ Component, pageProps }: AppProps):ReactElement {
   usePreferredColorScheme();
   useEffect(() => {
     setDynamicViewportHeightUnit();
-  });
+  }, []);
 
   return (
     <AuthProvider>
