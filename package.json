@@ -12,8 +12,10 @@
     "deploy": "export AWS_SDK_LOAD_CONFIG=1 && components-v1"
   },
   "dependencies": {
-    "@aws-amplify/auth": "^4.3.20",
-    "@aws-amplify/core": "^4.3.12",
+    "@aws-amplify/auth": "^5.1.2",
+    "@aws-amplify/cache": "^5.0.8",
+    "@aws-amplify/core": "^5.0.8",
+    "@aws-sdk/util-utf8-browser": "^3.188.0",
     "@react-spring/web": "^9.4.2",
     "aws-amplify": "^5.0.8",
     "express": "^4.17.2",

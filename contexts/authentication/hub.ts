@@ -1,5 +1,4 @@
-import Auth from '@aws-amplify/auth';
-import { Hub } from '@aws-amplify/core';
+import { Auth, Hub } from 'aws-amplify';
 import Router from 'next/router';
 import cookie from 'cookie';
 
