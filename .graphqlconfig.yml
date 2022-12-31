@@ -1,0 +1,12 @@
+projects:
+  posts:
+    schemaPath: graphql/schema.json
+    includes:
+      - graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: postsapi.ts
+        docsFilePath: graphql

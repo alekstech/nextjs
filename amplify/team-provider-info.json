@@ -19,6 +19,9 @@
           "webClientId": "48d0ig6qvd3cbh6qfk60t4g75q",
           "nativeClientId": "48d0ig6qvd3cbh6qfk60t4g75q"
         }
+      },
+      "api": {
+        "posts": {}
       }
     }
   }
