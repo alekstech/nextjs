@@ -39,6 +39,7 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
       return;
     }
   }
+  console.log('entries', entries);
   return {
     props: {
       entries,
@@ -79,6 +80,9 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
     <BlogPage {...meta}>
       <Stack>
         <h1>Entries</h1>
+        <PrefetchedLink href="/posts">
+          Posts
+        </PrefetchedLink>
         <PrefetchedLink href="/journal/new">
           Create
         </PrefetchedLink>

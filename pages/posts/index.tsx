@@ -6,8 +6,8 @@ import { Amplify, DataStore } from 'aws-amplify';
 // substitute for a similar mechanism in your application lifecycle with
 // other frameworks.
 
-import awsconfig from "../../aws-exports";
-Amplify.configure(awsconfig);
+// import awsconfig from "../../aws-exports";
+// Amplify.configure(awsconfig);
 
 type EditCache = {
   [key: string]: Post

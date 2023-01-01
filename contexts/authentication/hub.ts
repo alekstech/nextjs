@@ -19,7 +19,6 @@ const handleSignIn = async () => {
         maxAge: 60 * 60 * 24 * 1 // 1 day
       });
       document.cookie = serialized;
-      console.log('Set Authorization cookie', jwt);
       const path = "/";
       Router.push(path);
     })

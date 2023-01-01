@@ -14,6 +14,7 @@ type EagerPost = {
   readonly id: string;
   readonly name: string;
   readonly description?: string | null;
+  readonly owner?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -26,6 +27,7 @@ type LazyPost = {
   readonly id: string;
   readonly name: string;
   readonly description?: string | null;
+  readonly owner?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

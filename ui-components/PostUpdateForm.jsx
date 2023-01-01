@@ -27,16 +27,19 @@ export default function PostUpdateForm(props) {
   const initialValues = {
     name: undefined,
     description: undefined,
+    owner: undefined,
   };
   const [name, setName] = React.useState(initialValues.name);
   const [description, setDescription] = React.useState(
     initialValues.description
   );
+  const [owner, setOwner] = React.useState(initialValues.owner);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = { ...initialValues, ...postRecord };
     setName(cleanValues.name);
     setDescription(cleanValues.description);
+    setOwner(cleanValues.owner);
     setErrors({});
   };
   const [postRecord, setPostRecord] = React.useState(post);
@@ -51,6 +54,7 @@ export default function PostUpdateForm(props) {
   const validations = {
     name: [{ type: "Required" }],
     description: [],
+    owner: [],
   };
   const runValidationTasks = async (fieldName, value) => {
     let validationResponse = validateField(value, validations[fieldName]);
@@ -72,6 +76,7 @@ export default function PostUpdateForm(props) {
         let modelFields = {
           name,
           description,
+          owner,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -124,6 +129,7 @@ export default function PostUpdateForm(props) {
             const modelFields = {
               name: value,
               description,
+              owner,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -149,6 +155,7 @@ export default function PostUpdateForm(props) {
             const modelFields = {
               name,
               description: value,
+              owner,
             };
             const result = onChange(modelFields);
             value = result?.description ?? value;
@@ -162,6 +169,32 @@ export default function PostUpdateForm(props) {
         errorMessage={errors.description?.errorMessage}
         hasError={errors.description?.hasError}
         {...getOverrideProps(overrides, "description")}
+      ></TextField>
+      <TextField
+        label="Owner"
+        isRequired={false}
+        isReadOnly={false}
+        defaultValue={owner}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              description,
+              owner: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.owner ?? value;
+          }
+          if (errors.owner?.hasError) {
+            runValidationTasks("owner", value);
+          }
+          setOwner(value);
+        }}
+        onBlur={() => runValidationTasks("owner", owner)}
+        errorMessage={errors.owner?.errorMessage}
+        hasError={errors.owner?.hasError}
+        {...getOverrideProps(overrides, "owner")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -1,13 +1,13 @@
 import { useReducer, useContext, createContext } from 'react';
 // import AmplifyAuth from '@aws-amplify/auth';
-// import initializeAmplify from "./initialize";
+import initializeAmplify from "./initialize";
 import registerAuthListeners from "./hub";
 import { Amplify, Auth as AmplifyAuth } from 'aws-amplify';
 // import awsconfig from '../../aws-exports';
 
 // Amplify.configure(awsconfig);
 
-// initializeAmplify();
+initializeAmplify();
 
 registerAuthListeners();
 

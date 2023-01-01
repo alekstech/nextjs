@@ -1,5 +1,8 @@
+import awsconfig from '../../aws-exports';
 import Amplify from '@aws-amplify/core';
+import { AuthModeStrategyType } from 'aws-amplify';
 let port = "";
+
 
 if (process.env.NODE_ENV === 'development') {
   port = ":3000";
@@ -65,7 +68,10 @@ export const config = {
 };
 
 const initializeAmplify = () => {
-  Amplify.configure(config);
+  Amplify.configure({
+    ...config,
+    ...awsconfig
+  });
 };
 
 export default initializeAmplify;

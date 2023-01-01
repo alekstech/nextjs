@@ -15,16 +15,19 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type PostCreateFormInputValues = {
     name?: string;
     description?: string;
+    owner?: string;
 };
 export declare type PostCreateFormValidationValues = {
     name?: ValidationFunction<string>;
     description?: ValidationFunction<string>;
+    owner?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PostCreateFormOverridesProps = {
     PostCreateFormGrid?: FormProps<GridProps>;
     name?: FormProps<TextFieldProps>;
     description?: FormProps<TextFieldProps>;
+    owner?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PostCreateFormProps = React.PropsWithChildren<{
     overrides?: PostCreateFormOverridesProps | undefined | null;
