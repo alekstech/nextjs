@@ -39,7 +39,7 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
       return;
     }
   }
-  console.log('entries', entries);
+
   return {
     props: {
       entries,

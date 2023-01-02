@@ -73,7 +73,6 @@ const initializeAmplify = () => {
       domain: "auth.aleks.tech",
     }
   }
-  console.log(JSON.stringify(merged, null, 2))
   Amplify.configure(merged);
 };
 
