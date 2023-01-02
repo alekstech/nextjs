@@ -1,57 +1,46 @@
-import { useReducer, useContext, createContext } from 'react';
-// import AmplifyAuth from '@aws-amplify/auth';
+import { useState, useEffect, useContext, createContext } from 'react';
 import initializeAmplify from "./initialize";
 import registerAuthListeners from "./hub";
-import { Amplify, Auth as AmplifyAuth } from 'aws-amplify';
-// import awsconfig from '../../aws-exports';
-
-// Amplify.configure(awsconfig);
+import { Auth, Hub } from 'aws-amplify';
 
 initializeAmplify();
 
 registerAuthListeners();
 
-interface State {
-  Auth: typeof AmplifyAuth;
-}
-interface Action {
-  type: string
-}
-
-const initialState: State = {
-  Auth: AmplifyAuth
-};
-
-const actions = {
-  'LOG_IN': 'LOG_IN',
-};
-
-const AuthStateContext = createContext({} as State);
-const AuthDispatchContext = createContext({} as React.Dispatch<Action>);
-
-const reducer = (state: State, action: Action) => {
-  switch (action.type) {
-    case actions.LOG_IN:
-      console.log('LOG_IN action received');
-      return state;
-    default:
-      throw new Error(`Unknown action: ${action.type}`);
-  }
-};
+const AuthStateContext = createContext({
+  user: null,
+  Auth
+});
 
 export const Provider = ( { children }
     : { children: React.ReactChild | React.ReactChild[] }
   ) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+
+    let [user, setUser] = useState(null)
+
+    useEffect(() => {
+      const updateUser = async () => {
+        try {
+          let user = await Auth.currentAuthenticatedUser();
+          setUser(user);
+        } catch {
+          setUser(null);
+        }
+      }
+
+      // listen for login/signup events
+      const cleanup = Hub.listen('auth', updateUser) 
+
+      // check manually the first time because we won't get a Hub event
+      updateUser();
+      return () => cleanup()
+    }, []);
+  
     return (
-      <AuthDispatchContext.Provider value={dispatch}>
-        <AuthStateContext.Provider value={state}>
-          {children}
-        </AuthStateContext.Provider>
-      </AuthDispatchContext.Provider>
+      <AuthStateContext.Provider value={{ Auth, user }}>
+        {children}
+      </AuthStateContext.Provider>
     );
 };
 
 export const useAuthState = () => useContext(AuthStateContext);
-export const useAuthReducer = () => useContext(AuthDispatchContext);
-export const Auth = AmplifyAuth;

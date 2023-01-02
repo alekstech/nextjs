@@ -1,23 +1,16 @@
 import { useEffect } from 'react';
 import Router from 'next/router';
 import { useAuthState } from '../../../contexts/authentication';
+import { Auth } from 'aws-amplify';
 
 const Oauth = (): React.ReactNode => {
-  const { Auth } = useAuthState();
-
   const verifyLogin = async () => {
     try {
       await Auth.currentAuthenticatedUser();
-      const path = "/";
-      Router.push(path);
+      Router.push("/");
     } catch (err) {
       console.log({err});
-      Router.replace({
-        pathname: '/auth/error',
-        query: {
-          message: 'We could not log you in'
-        },
-      });
+      Router.push("/auth/login");
     }
   };
 

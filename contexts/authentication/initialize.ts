@@ -1,16 +1,11 @@
 import awsconfig from '../../aws-exports';
 import Amplify from '@aws-amplify/core';
-import { AuthModeStrategyType } from 'aws-amplify';
-let port = "";
 
-
-if (process.env.NODE_ENV === 'development') {
-  port = ":3000";
-}
-
-const redirectSignIn = `https://aleks.tech${port}/auth/oauth`;
-const redirectSignOut = `https://aleks.tech${port}/auth/logout`;
-
+const stage = (process.env.NEXT_PUBLIC_STAGE && process.env.NEXT_PUBLIC_STAGE !== "null") ? `${process.env.NEXT_PUBLIC_STAGE}.` : ``;
+const port = (process.env.NEXT_PUBLIC_PORT && process.env.NEXT_PUBLIC_PORT !== "null") ? `:${process.env.NEXT_PUBLIC_PORT}` : ``;
+const redirectStem = `https://${stage}aleks.tech${port}`;
+const redirectSignIn = redirectStem + `/auth/oauth`;
+const redirectSignOut = redirectStem + `/auth/logout`;
 
 export const config = {
   Auth: {
@@ -58,7 +53,7 @@ export const config = {
 
     // OPTIONAL - Hosted UI configuration
     oauth: {
-      domain: "alekstech.auth.us-east-1.amazoncognito.com",
+      domain: "auth.aleks.tech",
       scope: ["email", "profile", "openid"],
       redirectSignIn,
       redirectSignOut,
@@ -68,10 +63,18 @@ export const config = {
 };
 
 const initializeAmplify = () => {
-  Amplify.configure({
+  const merged = {
     ...config,
-    ...awsconfig
-  });
+    ...awsconfig,
+    oauth: {
+      ...awsconfig.oauth,
+      redirectSignIn: config.Auth.oauth.redirectSignIn,
+      redirectSignOut: config.Auth.oauth.redirectSignOut,
+      domain: "auth.aleks.tech",
+    }
+  }
+  console.log(JSON.stringify(merged, null, 2))
+  Amplify.configure(merged);
 };
 
 export default initializeAmplify;
