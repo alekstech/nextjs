@@ -1,4 +1,27 @@
 {
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextjs-production-52528-authRole",
+      "UnauthRoleArn": "arn:aws:iam::430114196315:role/amplify-nextjs-production-52528-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::430114196315:role/amplify-nextjs-production-52528-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-nextjs-production-52528-deployment",
+      "UnauthRoleName": "amplify-nextjs-production-52528-unauthRole",
+      "StackName": "amplify-nextjs-production-52528",
+      "StackId": "arn:aws:cloudformation:us-east-1:430114196315:stack/amplify-nextjs-production-52528/de4d4170-8a5d-11ed-bec1-0e723a38b8a9",
+      "AmplifyAppId": "d2gwd8swhbvwn"
+    },
+    "categories": {
+      "auth": {
+        "nextjs": {
+          "userPoolId": "us-east-1_tLTUaFeeq",
+          "userPoolName": "journal",
+          "webClientId": "48d0ig6qvd3cbh6qfk60t4g75q",
+          "nativeClientId": "48d0ig6qvd3cbh6qfk60t4g75q"
+        }
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplify756d98a343d14-staging-34858-authRole",
