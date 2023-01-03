@@ -1,5 +1,0 @@
-// Pre-render styled components on the server
-{
-  "presets": ["next/babel"],
-  "plugins": ["styled-components"]
-}
