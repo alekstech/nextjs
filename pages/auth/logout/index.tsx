@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuthState } from "../../../contexts/authentication";
-
+import Header from '../../../components/Header';
 
 const SignOut = function (): JSX.Element {
   const { Auth } = useAuthState();
@@ -22,14 +22,17 @@ const SignOut = function (): JSX.Element {
   }, []);
 
   return (
-    <main>
-      {loading && 
-        <h1>Working ...</h1>
-      }
-      {!loading && 
-        <h1>You've been logged out</h1>
-      }
-    </main>
+    <>
+      <Header />
+      <main>
+        {loading && 
+          <h1>Working ...</h1>
+        }
+        {!loading &&
+          <h1>You've been logged out</h1>
+        }
+      </main>
+    </> 
   );
 };
 

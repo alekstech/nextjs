@@ -32,11 +32,12 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
     ssrLoaded = true;
   } catch (e: unknown) {
     if (e instanceof FetchError && e.code === 401) {
-      const { res } = context;
-      res.setHeader("location", "/auth/login");
-      res.statusCode = 302;
-      res.end();
-      return;
+      return {
+        redirect: {
+          destination: '/auth/login',
+          permanent: false,
+        }
+      };
     }
   }
 

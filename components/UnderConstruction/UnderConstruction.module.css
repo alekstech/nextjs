@@ -1,0 +1,26 @@
+.background {
+  background-color: yellow;
+  position: relative;
+}
+
+.text {
+  text-transform: uppercase;
+  color: var(--gray-900);
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.background:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  background: 
+  linear-gradient(-45deg, transparent 45%, #000 45%, #000 55%, transparent 55%) 0 0/10px 10px,
+  linear-gradient(-45deg, transparent 45%, #000 45%, #000 55%, transparent 55%) 5px 0px/10px 10px;
+  background-color:rgba(255,255,255,0.5);
+}
