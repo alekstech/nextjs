@@ -41,9 +41,9 @@ const Header = ({ className } : { className?: string }): JSX.Element => {
                 </a>
               </li>}
               {user && <li>
-                <a href="/auth/logout">
+                <PrefetchedLink href="/auth/logout">
                   Log out
-                </a>
+                </PrefetchedLink>
               </li>}
             </Cluster>
           </Cluster>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Post } from '../../models';
-import { Amplify, DataStore } from 'aws-amplify';
+import { DataStore } from 'aws-amplify';
 // Example showing how to observe the model and keep state updated before
 // performing a save. This uses the useEffect React hook, but you can
 // substitute for a similar mechanism in your application lifecycle with
@@ -8,10 +8,6 @@ import { Amplify, DataStore } from 'aws-amplify';
 
 // import awsconfig from "../../aws-exports";
 // Amplify.configure(awsconfig);
-
-type EditCache = {
-  [key: string]: Post
-}
 
 const Posts = function () {
   const [posts, setPosts] = useState<Post[]>([]);

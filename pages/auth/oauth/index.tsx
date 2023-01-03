@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Router from 'next/router';
-import { useAuthState } from '../../../contexts/authentication';
 import { Auth } from 'aws-amplify';
 
 const Oauth = (): React.ReactNode => {

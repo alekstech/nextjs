@@ -1,4 +1,4 @@
-export function getCSSVariable(variable: string): any {
+export function getCSSVariable(variable: string): string {
   let value = "";
   if (process.browser) {
     value = getComputedStyle(document.body).getPropertyValue(`--${variable}`);

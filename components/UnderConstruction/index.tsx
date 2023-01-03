@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './UnderConstruction.module.css';
 
 export const Component = ({
   size = 'var(--font-size-6)',

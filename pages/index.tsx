@@ -5,7 +5,6 @@ import ColorPalette from '../components/ColorPalette';
 import styles from './Home.module.css';
 import Cluster from '../components/Layout/cluster';
 import Header from '../components/Header';
-import Layout from '../components/blog/BlogLayout';
 
 const MonkSkintoneScale = [
   "#f6ede4",
