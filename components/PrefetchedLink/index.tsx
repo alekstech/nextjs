@@ -15,10 +15,8 @@ export const PrefetchedLink = ({ href, children, block }: Props) => {
 
   return (
     // next/link pre-fetches pages when the anchor element intersects with viewport
-    <Link href={href}>
-      <a className={classes}>
-        {children}
-      </a>
+    <Link href={href} className={classes}>
+      {children}
     </Link>
   );
 };
