@@ -1,0 +1,21 @@
+{
+  "name": "eslint-config-acme",
+  "version": "0.0.1",
+  "repository": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-next": "canary",
+    "eslint-config-prettier": "^8.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}

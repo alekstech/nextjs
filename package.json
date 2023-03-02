@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "npm run build -workspaces && next build",
     "start": "next start",
     "lint": "next lint",
     "telemetry": "next telemetry",
     "info": "next info",
     "dev": "nodemon"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@aws-amplify/auth": "^5.1.2",
     "@aws-amplify/cache": "^5.0.8",
@@ -21,8 +24,10 @@
     "@types/react": "^18.0.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "acme-utils": "^0.0.1",
     "aws-amplify": "^5.0.8",
     "dotenv": "^16.0.3",
+    "eslint-config-acme": "^0.0.1",
     "express": "^4.17.2",
     "next": "^13.1.1",
     "react": "^18.2.0",

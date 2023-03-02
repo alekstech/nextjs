@@ -1,10 +1,11 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
 import Head from 'next/head';
 import PrefetchedLink from '../components/PrefetchedLink';
 import ColorPalette from '../components/ColorPalette';
 import styles from './Home.module.css';
 import Cluster from '../components/Layout/cluster';
 import Header from '../components/Header';
+import { randomColor } from 'acme-utils';
 
 const MonkSkintoneScale = [
   "#f6ede4",
@@ -19,7 +20,19 @@ const MonkSkintoneScale = [
   "#292420"
 ];
 
-const Home: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async function() {
+  return {
+    props: {
+      color: randomColor()
+    },
+  };
+};
+
+interface ComponentProps {
+  color: string;
+}
+
+const Home: NextPage<ComponentProps> = ({ color }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -44,7 +57,7 @@ const Home: NextPage = () => {
         <p>Toronto</p>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer} style={{ borderTopColor: color }}>
         <Cluster justify="space-around">
           <PrefetchedLink href="/blog/portfolio">
             About
