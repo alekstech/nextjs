@@ -9,6 +9,10 @@ import { DataStore } from 'aws-amplify';
 // import awsconfig from "../../aws-exports";
 // Amplify.configure(awsconfig);
 
+
+
+// DataStore hooks: https://gist.github.com/arabold/0bb11b0f17c89839393229111e8a446c
+
 const Posts = function () {
   const [posts, setPosts] = useState<Post[]>([]);
   const ref = useRef<HTMLFormElement>(null);
