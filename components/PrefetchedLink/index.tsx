@@ -1,21 +1,16 @@
+import { FC } from 'react';
 import Link from 'next/link';
-import styles from './styles.module.css';
 
 type Props = {
   href: string;
   children: React.ReactNode;
-  block?: boolean;
+  className?: string;
 }
 
-export const PrefetchedLink = ({ href, children, block }: Props) => {
-  let classes = '';
-  if (block) {
-    classes = styles.block;
-  }
-
+export const PrefetchedLink: FC<Props> = ({ href, children, className }: Props) => {
   return (
     // next/link pre-fetches pages when the anchor element intersects with viewport
-    <Link href={href} className={classes}>
+    <Link href={href} className={className}>
       {children}
     </Link>
   );
