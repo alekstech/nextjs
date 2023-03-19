@@ -17,7 +17,6 @@ export const meta = {
 
 export async function getServerSideProps(context:GetServerSidePropsContext) {
   const { Authorization } = cookie.parse(context.req.headers.cookie || '');
-
   let entries: Entry[] = [];
   let ssrLoaded = false;
 
@@ -31,7 +30,14 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
     entries = data;
     ssrLoaded = true;
   } catch (e: unknown) {
-    if (e instanceof FetchError && e.code === 401) {
+    if (e instanceof FetchError && e.code === 401) { // move to middleware
+      const cookies = cookie.serialize("after-login", context.resolvedUrl, {
+        path: "/",
+        httpOnly: false,
+        maxAge: 60 * 60 // 1 hour
+      });
+      context.res.setHeader('set-cookie', cookies);
+
       return {
         redirect: {
           destination: '/auth/login',

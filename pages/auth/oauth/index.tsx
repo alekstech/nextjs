@@ -1,15 +1,17 @@
 import { useEffect } from 'react';
 import Router from 'next/router';
 import { Auth } from 'aws-amplify';
+import jscookie from "js-cookie";
 
 const Oauth = (): React.ReactNode => {
   const verifyLogin = async () => {
     try {
       await Auth.currentAuthenticatedUser();
-      Router.push("/");
+      const path = jscookie.get("after-login") || "/";
+      Router.push(path);
     } catch (err) {
       console.log({err});
-      Router.push("/auth/login");
+      Router.push("/");
     }
   };
 
