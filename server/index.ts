@@ -9,9 +9,9 @@ const dev = process.env.NODE_ENV !== 'production';
 const cert:Buffer = readFileSync(__dirname + '/../certificates/localhost.crt');
 const key:Buffer = readFileSync(__dirname + '/../certificates/localhost.key');
 
-const hostName = '127.0.0.1';
+const hostname = '127.0.0.1';
 
-const next = createNextApp({ dev });
+const next = createNextApp({ dev, hostname, port });
 const handler = next.getRequestHandler();
 
 next.prepare().then(() => {
@@ -21,10 +21,10 @@ next.prepare().then(() => {
     return handler(req, res);
   });
 
-  createServer({ cert, key }, app).listen(port, hostName);
+  createServer({ cert, key }, app).listen(port, hostname);
 
   console.log(
-    `> Custom server listening at https://${hostName}:${port} as ${
+    `> Custom server listening at https://${hostname}:${port} as ${
       dev ? 'development' : 'production'
     }`
   );
