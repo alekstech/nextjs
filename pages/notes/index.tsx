@@ -86,7 +86,7 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
   return (
     <BlogPage {...meta}>
       <Stack>
-        <h1>Entries</h1>
+        <h1>Notes</h1>
         <PrefetchedLink href="/posts">
           Posts
         </PrefetchedLink>
@@ -103,7 +103,7 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
           </>
         }
         {!failed && !loading && !list.length &&
-          <p>Your entries will appear here</p>
+          <p>Your notes will appear here</p>
         }
         {!failed && !loading && list.length &&
           <StaggeredList>
