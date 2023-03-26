@@ -30,17 +30,17 @@ export const config = {
 
     // OPTIONAL - Configuration for cookie storage
     // Note: if the secure flag is set to true, then the cookie transmission requires a secure protocol
-    // cookieStorage: {
-    //   // REQUIRED - Cookie domain (only required if cookieStorage is provided)
-    //   domain: '.aleks.tech',
-    //   // OPTIONAL - Cookie path
-    //   path: '/',
-    //   // OPTIONAL - Cookie expiration in days
-    //   expires: 365,
-    //   // OPTIONAL - Cookie secure flag
-    //   // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
-    //   secure: true
-    // },
+    cookieStorage: {
+      // REQUIRED - Cookie domain (only required if cookieStorage is provided)
+      domain: '.aleks.tech',
+      // OPTIONAL - Cookie path
+      path: '/',
+      // OPTIONAL - Cookie expiration in days
+      expires: 365,
+      // OPTIONAL - Cookie secure flag
+      // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
+      secure: true
+    },
 
     // OPTIONAL - customized storage object
     // storage: new MyStorage(),
@@ -71,8 +71,7 @@ const initializeAmplify = () => {
       redirectSignIn: config.Auth.oauth.redirectSignIn,
       redirectSignOut: config.Auth.oauth.redirectSignOut,
       domain: "auth.aleks.tech",
-    },
-    ssr: true
+    }
   }
   Amplify.configure(merged);
 };
