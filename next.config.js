@@ -70,6 +70,9 @@ const base = (phase) => {
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
     reactStrictMode: true, // lint deprecated patterns
     headers: getHeaders(phase),
+    experimental: {
+      appDir: true
+    },
   };
   return nextConfig;
 };

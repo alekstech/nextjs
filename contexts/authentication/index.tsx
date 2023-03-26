@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect, useContext, createContext } from 'react';
 import initializeAmplify from "./initialize";
 import registerAuthListeners from "./hub";
