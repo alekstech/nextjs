@@ -9,7 +9,7 @@ const SignOut = function (): JSX.Element {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      await Auth.signOut();
+      // await Auth.signOut();
     } catch (err) {
       console.log(err);
     } finally {

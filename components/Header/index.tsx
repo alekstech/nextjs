@@ -36,7 +36,7 @@ const Header = ({ className } : { className?: string }): JSX.Element => {
                 </PrefetchedLink>
               </li>
               {!user && <li>
-                <a href="#" onClick={() => Auth.federatedSignIn()}>
+                <a href="#">
                   Log in
                 </a>
               </li>}

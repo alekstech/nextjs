@@ -9,7 +9,6 @@ const Oauth = (): React.ReactNode => {
       Router.push("/");
     } catch (err) {
       console.log({err});
-      Router.push("/auth/login");
     }
   };
 
