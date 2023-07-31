@@ -1,3 +1,4 @@
+import '../styles/index.css';
 import { Amplify, Auth } from "aws-amplify"
 import { merged } from "../contexts/authentication/initialize";
 
