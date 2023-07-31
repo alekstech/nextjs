@@ -62,17 +62,18 @@ export const config = {
   }
 };
 
-const initializeAmplify = () => {
-  const merged = {
-    ...config,
-    ...awsconfig,
-    oauth: {
-      ...awsconfig.oauth,
-      redirectSignIn: config.Auth.oauth.redirectSignIn,
-      redirectSignOut: config.Auth.oauth.redirectSignOut,
-      domain: "auth.aleks.tech",
-    }
+export const merged = {
+  ...config,
+  ...awsconfig,
+  oauth: {
+    ...awsconfig.oauth,
+    redirectSignIn: config.Auth.oauth.redirectSignIn,
+    redirectSignOut: config.Auth.oauth.redirectSignOut,
+    domain: "auth.aleks.tech",
   }
+}
+
+const initializeAmplify = () => { 
   Amplify.configure(merged);
 };
 

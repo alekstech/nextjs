@@ -70,6 +70,15 @@ const base = (phase) => {
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
     reactStrictMode: true, // lint deprecated patterns
     headers: getHeaders(phase),
+    webpack: (config, { isServer, nextRuntime, webpack }) => {
+      // Avoid AWS SDK Node.js require issue
+      // Source: https://github.com/aws-amplify/amplify-js/issues/11030
+      if (isServer && nextRuntime === 'nodejs')
+          config.plugins.push(
+              new webpack.IgnorePlugin({ resourceRegExp: /^aws-crt$/ })
+          );
+      return config;
+    },
   };
   return nextConfig;
 };

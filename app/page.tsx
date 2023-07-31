@@ -1,10 +1,10 @@
-import type { NextPage, GetServerSideProps } from 'next';
-import Head from 'next/head';
-import PrefetchedLink from '../components/PrefetchedLink';
-import ColorPalette from '../components/ColorPalette';
-import styles from './Home.module.css';
-import Cluster from '../components/Layout/cluster';
-import Header from '../components/Header';
+import type { NextPage } from 'next';
+// import Head from 'next/head';
+// import PrefetchedLink from '../components/PrefetchedLink';
+// import ColorPalette from '../components/ColorPalette';
+import styles from './styles.module.css';
+// import Cluster from '../components/Layout/cluster';
+// import Header from '../components/Header';
 import { randomColor } from 'acme-utils';
 
 const MonkSkintoneScale = [
@@ -20,35 +20,25 @@ const MonkSkintoneScale = [
   "#292420"
 ];
 
-export const getServerSideProps: GetServerSideProps = async function() {
-  return {
-    props: {
-      color: randomColor()
-    },
-  };
-};
+const Home: NextPage = () => {
+  const color = randomColor();
 
-interface ComponentProps {
-  color: string;
-}
-
-const Home: NextPage<ComponentProps> = ({ color }) => {
   return (
     <div className={styles.container}>
-      <Head>
+      {/* <Head>
         <title>Aleks Sobieraj</title>
         <meta name="description" content="Aleks Sobieraj, web developer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header className={styles.header} />
+      <Header className={styles.header} /> */}
 
       <main className={styles.main}>
         <h1 className={styles.title}>
           Aleks Sobieraj
         </h1>
 
-        <ColorPalette colors={MonkSkintoneScale} />
+        {/* <ColorPalette colors={MonkSkintoneScale} /> */}
 
         <p className={styles.description}>
           web developer
@@ -58,11 +48,11 @@ const Home: NextPage<ComponentProps> = ({ color }) => {
       </main>
 
       <footer className={styles.footer} style={{ borderTopColor: color }}>
-        <Cluster justify="space-around">
+        {/* <Cluster justify="space-around">
           <PrefetchedLink href="/blog/portfolio">
             About
           </PrefetchedLink>
-        </Cluster>
+        </Cluster> */}
       </footer>
 
     </div>
