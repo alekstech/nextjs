@@ -1,0 +1,51 @@
+import Layout from '../../components/BlogPage'
+import UnderConstruction from 'components/UnderConstruction';
+
+export const meta = {
+  title: "Portfolio",
+  description: "My attempt at rebuilding Amazon.com",
+  summary: "A website showcasing web dev I'm interested in",
+  image: "",
+  imageAlt: "",
+};
+
+# Portfolio
+
+This site is a showcase of some of my web development skills and a playground I use to try out new tools.
+<br/>
+Permanently under construction.
+
+<UnderConstruction style={{ marginTop: '1em' }} />
+
+## Stack
+
+Tools I used to make this site
+
+*   [webpack](https://webpack.js.org/) for bundling and as a dev server
+*   [TypeScript](https://www.typescriptlang.org/) for input-output checks
+*   [React](https://reactjs.org/) for UI-data binding
+*   [MDX](https://mdxjs.com/) to render markdown, like this page
+*   HTML written with accessibility in mind
+*   [Next.js](https://nextjs.org/) for routing and server-side rendering
+*   [Cognito](https://aws.amazon.com/cognito/) for authentication
+*   [S3](https://aws.amazon.com/s3/) and [CloudFront](https://aws.amazon.com/cloudfront/) for static asset hosting
+*   [DynamoDB](https://aws.amazon.com/dynamodb/) for data storage
+*   [Lambda](https://aws.amazon.com/lambda/) and [API Gateway](https://aws.amazon.com/api-gateway/) for interacting with the database
+*   [Route53](https://aws.amazon.com/route53/) for DNS
+*   [Amplify](https://aws.amazon.com/amplify/) for continuous deployments and cross-device data sync
+
+## Roadmap
+
+My to-do list for this portfolio
+
+*   a styling framework with the following layers and CSS Properties for each layer
+    *    a dynamic colour palette
+    *    a typography palette
+    *    a spacing scale
+    *    animations
+    *    layout components from [Every Layout](https://every-layout.dev/) from an npm package (credit missing)
+    *    grid layout using @react-css/grid
+*   an service worker to prefetch files
+*   a sitemap
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
