@@ -1,83 +1,83 @@
-import HelloWorld from '../../../posts/hello.mdx'
-
-import MDXRemote from '../../../components/MDXRemote'
+import type { Metadata } from 'next'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
 import matter from 'gray-matter'
 import { promises as fs } from 'fs'
 import { join } from 'path'
-import { serialize } from 'next-mdx-remote/serialize'
-
-import rehypeExternalLinks from 'rehype-external-links'
-import remarkSlug from 'remark-slug'
-
 
 const postsPath = join(process.cwd(), '/posts')
 
-export async function generateStaticParams() {
-  return await fs.readdir(postsPath)
+type Params = { slug: string };
+
+export async function generateStaticParams(): Promise<Params[]> {
+  return (await fs.readdir(postsPath)).map(slug => ({ slug }));
 }
 
-export async function generateMetadata({ params }) {
-  const { blogData } = await getPost(params)
+export async function generateMetadata({ params: { slug } }: { params: Params }): Promise<Metadata> {
+  const { data } = await getPost(slug);
 
   return {
-    title: `${blogData.title} | HyperUI`,
-    description: blogData.description,
+    title: `${data.title}`,
+    description: data.description,
     openGraph: {
-      title: `${blogData.title} | HyperUI`,
-      description: blogData.description,
-      url: 'https://www.hyperui.dev/',
-      siteName: 'HyperUI',
+      title: `${data.title}`,
+      description: data.description,
+      url: 'https://www.aleks.tech/',
+      siteName: 'aleks.tech',
       type: 'website',
-      images: [ 'https://www.hyperui.dev/og.jpg' ],
+      images: [ 'https://aleks.tech/logo.svg' ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${blogData.title} | HyperUI`,
-      description: blogData.description,
+      title: `${data.title}`,
+      description: data.description,
     },
   }
 }
 
-async function getPost(params) {
-  const postPath = join(postsPath, `${params.slug}.mdx`)
+async function getPost(slug: string) {
+  const postPath = join(postsPath, `${slug}.mdx`)
   const postItem = await fs.readFile(postPath, 'utf-8')
 
-  const { content, data: frontmatter } = matter(postItem)
+  const { content, data } = matter(postItem)
 
   return {
-    blogData: frontmatter,
-    blogContent: content,
+    data,
+    content,
   }
 }
 
-export default async function Page({ params }) {
-  const { blogData, blogContent } = await getPost(params)
-
+const JsonLd = ({ data }) => {
   const schemaData = {
     '@context': 'http://schema.org',
     '@type': 'NewsArticle',
-    headline: `${blogData.title}`,
+    headline: `${data.title}`,
     image: 'https://www.aleks.tech/logo.svg',
-    datePublished: `${blogData.date}`,
+    datePublished: `${data.date}`,
   }
+
+  return <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+  />
+}
+
+export default async function Page({ params: { slug } }: { params: Params }) {
+  const { data, content } = await getPost(slug)
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <JsonLd data={data} />
 
       <article className="prose prose-img:rounded-lg mx-auto">
         <header>
-          <time className="text-sm text-gray-700">{blogData.date.toISOString()}</time>
+          <time className="text-sm text-gray-700">{data.date.toISOString()}</time>
 
-          <h1 className="mt-1">{blogData.title}</h1>
+          <h1 className="mt-1">{data.title}</h1>
         </header>
 
         <MDXRemote
-          markdown={blogContent}
+          source={content}
         />
       </article>
     </>

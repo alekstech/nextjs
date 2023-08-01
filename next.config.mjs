@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
-const nextMdx = require('@next/mdx');
+import nextMDX from '@next/mdx';
 
 // CSP directives: developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
-const getContentSecurityPolicy = (phase) => {
-  const env = phase === PHASE_DEVELOPMENT_SERVER ? "dev" : "prod";
+const getContentSecurityPolicy = () => {
+  const env = 1 === 0 ? "dev" : "prod";
   const directives = {
     defaultSrc: {
       prod: "'self'",
@@ -86,13 +84,6 @@ const base = (phase) => {
   return nextConfig;
 };
 
-const mdxOptions = {
-  options: {
-    extension: /\.mdx?$/,
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-};
-const config = nextMdx(mdxOptions)(base());
+const config = nextMDX()(base());
 
-module.exports = config;
+export default config;
