@@ -79,16 +79,18 @@ const base = (phase) => {
           );
       return config;
     },
+    experimental: {
+      mdxRs: true,
+    },
   };
   return nextConfig;
 };
 
 const mdxOptions = {
-  extension: /\.mdx?$/,
   options: {
+    extension: /\.mdx?$/,
     remarkPlugins: [],
     rehypePlugins: [],
-    providerImportSource: "@mdx-js/react",
   },
 };
 const config = nextMdx(mdxOptions)(base());
