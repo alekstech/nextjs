@@ -57,6 +57,7 @@
     "autoprefixer": "^10.4.14",
     "aws-crt": "^1.17.0",
     "cross-env": "^7.0.3",
+    "cssnano": "^6.0.1",
     "encoding": "^0.1.13",
     "eslint": "^8.7.0",
     "http-proxy": "^1.18.1",
