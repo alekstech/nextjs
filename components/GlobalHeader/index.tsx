@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useId } from 'react';
 import ALogo from './ALogo';
 import { useAuthState } from "../../contexts/authentication";
 import { Auth } from 'aws-amplify';
@@ -9,7 +9,7 @@ import Link from 'next/link';
 const GlobalHeader = ({ className } : { className?: string }): JSX.Element => {
   return (
     <Menu>
-      <Menu.Button>A</Menu.Button>
+      <Menu.Button className="h-12 w-12" id="global-header--menu-button">A</Menu.Button>
       <Menu.Items>
         <Menu.Item>
           {({ active }) => (
