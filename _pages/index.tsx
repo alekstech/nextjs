@@ -4,7 +4,7 @@ import PrefetchedLink from '../components/PrefetchedLink';
 import ColorPalette from '../components/ColorPalette';
 import styles from './Home.module.css';
 import Cluster from '../components/Layout/cluster';
-import Header from '../components/Header';
+import GlobalHeader from '../components/GlobalHeader';
 import { randomColor } from 'acme-utils';
 
 const MonkSkintoneScale = [
@@ -41,7 +41,7 @@ const Home: NextPage<ComponentProps> = ({ color }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header className={styles.header} />
+      <GlobalHeader className={styles.header} />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

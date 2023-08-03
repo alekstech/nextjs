@@ -19,6 +19,7 @@
     "@aws-amplify/cache": "^5.0.8",
     "@aws-amplify/core": "^5.0.8",
     "@aws-sdk/util-utf8-browser": "^3.188.0",
+    "@headlessui/react": "^1.7.16",
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.2.1",
     "@next/mdx": "^13.4.12",

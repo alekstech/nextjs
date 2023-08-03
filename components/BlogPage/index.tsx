@@ -1,6 +1,6 @@
 import Center from '../Layout/center';
 import Cover from '../Layout/cover';
-import Header from '../Header';
+import GlobalHeader from '../GlobalHeader';
 import PageHead, { Props as PageHeadProps } from '../PageHead';
 
 interface Props extends PageHeadProps{
@@ -14,7 +14,7 @@ export const BlogPage = ({ children, ...rest }: Props) => {
     <>
       <PageHead {...rest} />
       <Cover centered="main">
-        <Header />
+        <GlobalHeader />
         <main className="blog-page">
           <Center>
             {children}
