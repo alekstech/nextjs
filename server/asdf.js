@@ -1,6 +1,11 @@
-var https = require('https'),
-    httpProxy = require('http-proxy'),
-    fs = require('fs');
+import https from 'https'
+import httpProxy from 'http-proxy'
+import fs from 'fs'
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const cert = fs.readFileSync(__dirname + '/../certificates/localhost.crt');
 const key = fs.readFileSync(__dirname + '/../certificates/localhost.key');
