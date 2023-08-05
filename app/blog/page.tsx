@@ -4,20 +4,19 @@ import { join } from 'path'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Tailwind CSS Blog | HyperUI',
-  description: 'Tips and tricks for using Tailwind CSS in your projects.',
+  title: 'Blog | aleks.tech',
+  description: '',
   openGraph: {
-    title: 'Tailwind CSS Blog | HyperUI',
-    description: 'Tips and tricks for using Tailwind CSS in your projects.',
-    url: 'https://www.hyperui.dev/',
-    siteName: 'HyperUI',
+    title: 'Blog | aleks.tech',
+    description: '',
+    url: 'https://aleks.tech',
+    siteName: 'aleks.tech',
     type: 'website',
-    image: 'https://www.hyperui.dev/og.jpg',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tailwind CSS Blog | HyperUI',
-    description: 'Tips and tricks for using Tailwind CSS in your projects.',
+    title: 'Blog | aleks.tech',
+    description: '',
   },
 }
 
