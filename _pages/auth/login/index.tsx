@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAuthState } from "../../../contexts/authentication";
-import GlobalHeader from '../../../components/GlobalHeader';
+import GlobalHeader from "../../../components/GlobalHeader";
 
 const SignIn = function (): JSX.Element {
   const { Auth } = useAuthState();
@@ -20,9 +20,8 @@ const SignIn = function (): JSX.Element {
   return (
     <>
       <GlobalHeader />
-    </> 
+    </>
   );
 };
-
 
 export default SignIn;

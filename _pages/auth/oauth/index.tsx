@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import Router from 'next/router';
-import { Auth } from 'aws-amplify';
+import { useEffect } from "react";
+import Router from "next/router";
+import { Auth } from "aws-amplify";
 
 const Oauth = (): React.ReactNode => {
   const verifyLogin = async () => {
@@ -8,7 +8,7 @@ const Oauth = (): React.ReactNode => {
       await Auth.currentAuthenticatedUser();
       Router.push("/");
     } catch (err) {
-      console.log({err});
+      console.log({ err });
     }
   };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 
 const StyledUl = styled.ul`
@@ -7,15 +7,11 @@ const StyledUl = styled.ul`
 `;
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export const UnstyledList = ({ children }: Props) => {
-  return (
-    <StyledUl>
-      {children}
-    </StyledUl>
-  );
+  return <StyledUl>{children}</StyledUl>;
 };
 
 export default UnstyledList;

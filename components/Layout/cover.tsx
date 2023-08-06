@@ -13,7 +13,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 const StyledCover = styled.div<Props>(
-  props => `
+  (props) => `
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -38,7 +38,7 @@ const StyledCover = styled.div<Props>(
       margin-bottom: auto;
   }
 
-`
+`,
 );
 
 export const Cover: React.FC<Props> = ({
@@ -49,7 +49,7 @@ export const Cover: React.FC<Props> = ({
 }) => {
   const props = {
     centered,
-    space
+    space,
   };
 
   return (

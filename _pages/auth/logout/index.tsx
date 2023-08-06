@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuthState } from "../../../contexts/authentication";
-import GlobalHeader from '../../../components/GlobalHeader';
+import GlobalHeader from "../../../components/GlobalHeader";
 
 const SignOut = function (): JSX.Element {
   const { Auth } = useAuthState();
@@ -25,16 +25,11 @@ const SignOut = function (): JSX.Element {
     <>
       <GlobalHeader />
       <main>
-        {loading && 
-          <h1>Working ...</h1>
-        }
-        {!loading &&
-          <h1>You've been logged out</h1>
-        }
+        {loading && <h1>Working ...</h1>}
+        {!loading && <h1>You've been logged out</h1>}
       </main>
-    </> 
+    </>
   );
 };
-
 
 export default SignOut;

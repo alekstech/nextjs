@@ -7,7 +7,9 @@ a:link {
   color: var(--link-color);
 }
 
-a:visited, a:hover, a:active {
+a:visited,
+a:hover,
+a:active {
   color: var(--link-visited-color);
   text-decoration-color: var(--text-color);
 }

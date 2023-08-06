@@ -16,26 +16,25 @@ const StackContainer = styled.div<Props>`
   justify-content: flex-start;
 
   & > * + * {
-    margin-top: ${props => props.space}
+    margin-top: ${(props) => props.space};
   }
 
-  & ${props => !props.recursive && `>`} * + * {
-      margin-top: ${props => props.space}
+  & ${(props) => !props.recursive && `>`} * + * {
+    margin-top: ${(props) => props.space};
   }
 
-  ${props =>
+  ${(props) =>
     props.splitAfter &&
     `&:only-child {
       height: 100%;
-    }`
-  }
+    }`}
 
-  & > :nth-child(${props => props.splitAfter}) {
-      margin-bottom: auto;
+  & > :nth-child(${(props) => props.splitAfter}) {
+    margin-bottom: auto;
   }
 `;
 
-export const Stack= ({
+export const Stack = ({
   space = "var(--s1)",
   recursive = false,
   children,
@@ -43,7 +42,7 @@ export const Stack= ({
 }: Props) => {
   const props = {
     space,
-    recursive
+    recursive,
   };
   return (
     <StackContainer {...rest} {...props}>

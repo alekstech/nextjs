@@ -1,19 +1,19 @@
-import Head from 'next/head';
+import Head from "next/head";
 import { GetStaticPropsContext } from "next";
 
 export interface Props {
-  author?: string
-  description?: string
-  image?: string
-  imageAlt?: string
-  locale?: string
-  siteName?: string
-  summary?: string
-  title?: string
-  type?: string
+  author?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  locale?: string;
+  siteName?: string;
+  summary?: string;
+  title?: string;
+  type?: string;
 }
 
-export async function getStaticProps (ctx:GetStaticPropsContext) {
+export async function getStaticProps(ctx: GetStaticPropsContext) {
   return JSON.stringify(ctx);
 }
 
@@ -26,11 +26,11 @@ const Meta = ({
   siteName = "aleks.tech",
   summary = "",
   title = "aleks.tech",
-  type = "article"
+  type = "article",
 }: Props) => {
   let href = "";
   if (process.browser) {
-    href = window.location.href; 
+    href = window.location.href;
   }
 
   return (

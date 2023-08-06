@@ -31,7 +31,7 @@ export default function PostUpdateForm(props) {
   };
   const [name, setName] = React.useState(initialValues.name);
   const [description, setDescription] = React.useState(
-    initialValues.description
+    initialValues.description,
   );
   const [owner, setOwner] = React.useState(initialValues.owner);
   const [errors, setErrors] = React.useState({});
@@ -83,16 +83,16 @@ export default function PostUpdateForm(props) {
             if (Array.isArray(modelFields[fieldName])) {
               promises.push(
                 ...modelFields[fieldName].map((item) =>
-                  runValidationTasks(fieldName, item)
-                )
+                  runValidationTasks(fieldName, item),
+                ),
               );
               return promises;
             }
             promises.push(
-              runValidationTasks(fieldName, modelFields[fieldName])
+              runValidationTasks(fieldName, modelFields[fieldName]),
             );
             return promises;
-          }, [])
+          }, []),
         );
         if (validationResponses.some((r) => r.hasError)) {
           return;
@@ -104,7 +104,7 @@ export default function PostUpdateForm(props) {
           await DataStore.save(
             Post.copyOf(postRecord, (updated) => {
               Object.assign(updated, modelFields);
-            })
+            }),
           );
           if (onSuccess) {
             onSuccess(modelFields);

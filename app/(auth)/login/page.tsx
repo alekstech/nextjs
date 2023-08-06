@@ -1,6 +1,6 @@
-'use client';
-import React from 'react';
-import { Amplify, Auth } from "aws-amplify"
+"use client";
+import React from "react";
+import { Amplify, Auth } from "aws-amplify";
 import { merged } from "../../../contexts/authentication/initialize";
 
 // Amplify.configure(merged)
@@ -12,9 +12,9 @@ type SignInParameters = {
 export async function signIn({ username, password }: SignInParameters) {
   try {
     const user = await Auth.signIn(username, password);
-    console.log('signed in');
+    console.log("signed in");
   } catch (error) {
-    console.log('error signing in', error);
+    console.log("error signing in", error);
   }
 }
 
@@ -31,18 +31,27 @@ export default function Page() {
     // fetch('/some-api', { method: form.method, body: formData });
 
     // Or you can work with it as a plain object:
-    const signInParams = Object.fromEntries(formData.entries()) as SignInParameters;
-    console.log(signInParams)
+    const signInParams = Object.fromEntries(
+      formData.entries(),
+    ) as SignInParameters;
+    console.log(signInParams);
     signIn(signInParams);
   }
 
-  return <>
-    <form method="POST" onSubmit={handleSubmit}>
-      <label htmlFor="username">Username</label>
-      <input type="text" name="username" id="username" autoComplete="email"/>
-      <label htmlFor="password">Password</label>
-      <input type="password" name="password" id="password" autoComplete="password"/>
-      <button type="submit">Log in</button>
-    </form>
-  </>
-};
+  return (
+    <>
+      <form method="POST" onSubmit={handleSubmit}>
+        <label htmlFor="username">Username</label>
+        <input type="text" name="username" id="username" autoComplete="email" />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          autoComplete="password"
+        />
+        <button type="submit">Log in</button>
+      </form>
+    </>
+  );
+}

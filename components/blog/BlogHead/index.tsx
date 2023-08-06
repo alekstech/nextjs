@@ -2,7 +2,7 @@
   Render the head element for a blog page
   using data parsed from the top of the markdown file
 */
-import Head from 'next/head';
+import Head from "next/head";
 
 export type FrontMatterData = {
   title: string;
@@ -10,9 +10,9 @@ export type FrontMatterData = {
   summary: string;
   image: string;
   imageAlt: string;
-}
+};
 
-export const BlogHead = ({ frontMatter }: { frontMatter: FrontMatterData}) => {
+export const BlogHead = ({ frontMatter }: { frontMatter: FrontMatterData }) => {
   return (
     <Head>
       <title>{frontMatter.title}</title>

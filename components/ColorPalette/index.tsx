@@ -12,19 +12,19 @@ interface StyledPanelProps {
 
 const StyledPanel = styled.div<StyledPanelProps>`
   flex-grow: 1;
-  background-color: ${props => {
+  background-color: ${(props) => {
     return props.colorValue || "";
   }};
 `;
 
 type ColorPaletteProps = {
   colors: string[];
-}
+};
 
 export const ColorPalette = (props: ColorPaletteProps) => {
   return (
     <StyledFrame>
-      {props.colors.map(color => (
+      {props.colors.map((color) => (
         <StyledPanel colorValue={color} key={color} />
       ))}
     </StyledFrame>

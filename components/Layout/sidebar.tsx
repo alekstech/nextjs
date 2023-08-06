@@ -23,7 +23,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 const SidebarContainer = styled.div<Props>(
-  props => `
+  (props) => `
   & > * {
     display: flex;
     flex-wrap: wrap;
@@ -40,7 +40,7 @@ const SidebarContainer = styled.div<Props>(
   & > * > ${props.side !== "left" ? `:first-child` : `:last-child`} {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: calc(${props.contentMin} - ${props.space});`
+    min-width: calc(${props.contentMin} - ${props.space});`,
 );
 
 export const Sidebar: React.FC<Props> = ({
@@ -59,7 +59,7 @@ export const Sidebar: React.FC<Props> = ({
     side,
     sideWidth,
     contentMin,
-    noStretch
+    noStretch,
   };
 
   if (React.Children.count(children) != 2) {

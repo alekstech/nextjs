@@ -1,23 +1,23 @@
-import { ReactElement, useEffect } from 'react';
-import '../styles/index.css';
-import type { AppProps } from 'next/app';
-import { Provider as AuthProvider } from '../contexts/authentication';
-import usePreferredColorScheme from '../contexts/theme/usePreferredColorScheme';
-import asciiLogo from '../public/asciiLogo';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Script from 'next/script';
-import * as gtag from '../analytics/gtag';
+import { ReactElement, useEffect } from "react";
+import "../styles/index.css";
+import type { AppProps } from "next/app";
+import { Provider as AuthProvider } from "../contexts/authentication";
+import usePreferredColorScheme from "../contexts/theme/usePreferredColorScheme";
+import asciiLogo from "../public/asciiLogo";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import * as gtag from "../analytics/gtag";
 
-const CustomApp = function({ Component, pageProps }: AppProps):ReactElement {
+const CustomApp = function ({ Component, pageProps }: AppProps): ReactElement {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       gtag.pageview(url);
     };
-    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
 

@@ -1,4 +1,5 @@
-select, option {
+select,
+option {
   background-color: var(--background-color);
   color: var(--text-color);
   border-radius: var(--s-5);
@@ -13,4 +14,3 @@ select, option {
 select::-ms-expand {
   display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
 }
-

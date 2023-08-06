@@ -1,4 +1,4 @@
-import { Auth } from 'aws-amplify';
+import { Auth } from "aws-amplify";
 
 // Add Authorization header
 export const addAuth = async (init: RequestInit) => {

@@ -1,4 +1,5 @@
-body, body.light {
+body,
+body.light {
   --background-color: var(--white);
 
   --text-color: var(--indigo-900);
@@ -18,15 +19,15 @@ body, body.light {
 @media (prefers-color-scheme: dark) {
   body {
     --background-color: var(--gray-900);
-  
+
     --text-color: var(--white);
-  
+
     --link-color: var(--text-color);
     --link-visited-color: var(--text-color);
-  
+
     --button-background: var(--indigo-900);
     --button-text: var(--white);
-  
+
     --outline: var(--outline-width) solid var(--text-color);
   }
 }

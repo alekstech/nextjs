@@ -1,6 +1,6 @@
-import { Auth, Hub } from 'aws-amplify';
-import Router from 'next/router';
-import cookie from 'cookie';
+import { Auth, Hub } from "aws-amplify";
+import Router from "next/router";
+import cookie from "cookie";
 
 const handleSignIn = async () => {
   const session = await Auth.currentSession();
@@ -9,37 +9,37 @@ const handleSignIn = async () => {
 
   Auth.currentAuthenticatedUser()
     .then(() => {
-      const expires = new Date(Date.now() + (3600 * 1000 * 24 * 1)); // 1 day
-      const serialized = cookie.serialize('Authorization', jwt, {
+      const expires = new Date(Date.now() + 3600 * 1000 * 24 * 1); // 1 day
+      const serialized = cookie.serialize("Authorization", jwt, {
         domain: ".aleks.tech",
-        sameSite: 'strict',
+        sameSite: "strict",
         secure: true,
-        path: '/',
+        path: "/",
         expires,
-        maxAge: 60 * 60 * 24 * 1 // 1 day
+        maxAge: 60 * 60 * 24 * 1, // 1 day
       });
       document.cookie = serialized;
       const path = "/";
       Router.push(path);
     })
-    .catch(e => {
-      console.log({e});
+    .catch((e) => {
+      console.log({ e });
       Router.push("/auth/login");
     });
 };
 
 const handleSignOut = async () => {
   const expires = new Date(Date.now());
-  const serialized = cookie.serialize('Authorization', '', {
+  const serialized = cookie.serialize("Authorization", "", {
     domain: ".aleks.tech",
-    sameSite: 'strict',
+    sameSite: "strict",
     secure: true,
-    path: '/',
+    path: "/",
     expires,
-    maxAge: 0
+    maxAge: 0,
   });
   document.cookie = serialized;
-  console.log('Remove Authorization cookie');
+  console.log("Remove Authorization cookie");
 };
 
 export const registerAuthListeners = () => {
@@ -53,26 +53,26 @@ export const registerAuthListeners = () => {
         handleSignIn();
         break;
       }
-      case 'signUp':
+      case "signUp":
         Auth.currentAuthenticatedUser()
           .then(() => {
-          // store access token in context
-          const path = "/";
-          Router.push(path);
-        })
-        .catch(() => {
-          const path = "/auth/signup";
-          Router.push(path);
-        });
+            // store access token in context
+            const path = "/";
+            Router.push(path);
+          })
+          .catch(() => {
+            const path = "/auth/signup";
+            Router.push(path);
+          });
         break;
-      case 'signIn_failure':
+      case "signIn_failure":
         Auth.currentAuthenticatedUser()
           .then(() => {
             const path = "/";
             Router.push(path);
           })
           .catch((e) => {
-            console.log({e});
+            console.log({ e });
             // const path = "/auth/login";
             // Router.push(path);
           });

@@ -6,7 +6,6 @@ Built in 2022.
 
 [See stack](https://aleks.tech/blog/portfolio).
 
-
 ## Developer notes
 
 - [Roadmap](https://aleks.tech/blog/portfolio#roadmap).

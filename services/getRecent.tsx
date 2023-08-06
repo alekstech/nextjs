@@ -1,12 +1,12 @@
-import { recent as resource } from './resources';
-import addAuth from './addAuth';
+import { recent as resource } from "./resources";
+import addAuth from "./addAuth";
 
 export interface Entry {
-  EntryId: string
-  EntryBody: string
-  CreatedTime: string
-  UpdatedTime: string
-  IsFavorite: string
+  EntryId: string;
+  EntryBody: string;
+  CreatedTime: string;
+  UpdatedTime: string;
+  IsFavorite: string;
 }
 
 export class FetchError {
@@ -15,7 +15,7 @@ export class FetchError {
 
   constructor(code: number) {
     const error = new Error();
-    this.name = 'FetchError';
+    this.name = "FetchError";
     this.code = code;
 
     Error.captureStackTrace(error, FetchError);
@@ -25,11 +25,11 @@ export class FetchError {
 type Args = {
   init?: RequestInit;
   withAuth?: boolean;
-}
+};
 
 export const getRecent = async ({ init, withAuth }: Args): Promise<Entry[]> => {
   if (withAuth) {
-    init = await addAuth(init = {});
+    init = await addAuth((init = {}));
   }
 
   const response = await fetch(resource, init);

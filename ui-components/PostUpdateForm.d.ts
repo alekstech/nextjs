@@ -9,30 +9,35 @@ import { Post } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
 export declare type ValidationResponse = {
-    hasError: boolean;
-    errorMessage?: string;
+  hasError: boolean;
+  errorMessage?: string;
 };
-export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
+export declare type ValidationFunction<T> = (
+  value: T,
+  validationResponse: ValidationResponse,
+) => ValidationResponse | Promise<ValidationResponse>;
 export declare type PostUpdateFormInputValues = {
-    name?: string;
-    description?: string;
-    owner?: string;
+  name?: string;
+  description?: string;
+  owner?: string;
 };
 export declare type PostUpdateFormValidationValues = {
-    name?: ValidationFunction<string>;
-    description?: ValidationFunction<string>;
-    owner?: ValidationFunction<string>;
+  name?: ValidationFunction<string>;
+  description?: ValidationFunction<string>;
+  owner?: ValidationFunction<string>;
 };
-export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
+export declare type FormProps<T> = Partial<T> &
+  React.DOMAttributes<HTMLDivElement>;
 export declare type PostUpdateFormOverridesProps = {
-    PostUpdateFormGrid?: FormProps<GridProps>;
-    name?: FormProps<TextFieldProps>;
-    description?: FormProps<TextFieldProps>;
-    owner?: FormProps<TextFieldProps>;
+  PostUpdateFormGrid?: FormProps<GridProps>;
+  name?: FormProps<TextFieldProps>;
+  description?: FormProps<TextFieldProps>;
+  owner?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type PostUpdateFormProps = React.PropsWithChildren<{
+export declare type PostUpdateFormProps = React.PropsWithChildren<
+  {
     overrides?: PostUpdateFormOverridesProps | undefined | null;
-} & {
+  } & {
     id?: string;
     post?: Post;
     onSubmit?: (fields: PostUpdateFormInputValues) => PostUpdateFormInputValues;
@@ -41,5 +46,8 @@ export declare type PostUpdateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: PostUpdateFormInputValues) => PostUpdateFormInputValues;
     onValidate?: PostUpdateFormValidationValues;
-} & React.CSSProperties>;
-export default function PostUpdateForm(props: PostUpdateFormProps): React.ReactElement;
+  } & React.CSSProperties
+>;
+export default function PostUpdateForm(
+  props: PostUpdateFormProps,
+): React.ReactElement;

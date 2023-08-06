@@ -9,11 +9,11 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 const StyledBox = styled.div<Props>(
-  props => `
+  (props) => `
     padding: ${props.padding};
     border: ${props.borderWidth} solid;
     background-color: inherit;
-`
+`,
 );
 
 export const Box: React.FC<Props> = ({
@@ -24,7 +24,7 @@ export const Box: React.FC<Props> = ({
 }) => {
   const props = {
     padding,
-    borderWidth
+    borderWidth,
   };
   return (
     <StyledBox {...props} {...rest}>

@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
-import PrefetchedLink from '../../components/PrefetchedLink';
+import { useEffect, useState } from "react";
+import PrefetchedLink from "../../components/PrefetchedLink";
 import { Stack, Cluster } from "../../components/Layout";
 import BlogPage from "../../components/BlogPage";
 import StaggeredList from "../../components/StaggeredList";
 import { GetServerSidePropsContext } from "next";
-import cookie from 'cookie';
-import { getRecent, Entry, FetchError } from '../../services/getRecent';
+import cookie from "cookie";
+import { getRecent, Entry, FetchError } from "../../services/getRecent";
 
 export const meta = {
   title: "Entries",
   description: "Journal entries",
   summary: "All entries",
   image: "",
-  imageAlt: "" // max 420 characters for Twitter
+  imageAlt: "", // max 420 characters for Twitter
 };
 
-export async function getServerSideProps(context:GetServerSidePropsContext) {
-  const { Authorization } = cookie.parse(context.req.headers.cookie || '');
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { Authorization } = cookie.parse(context.req.headers.cookie || "");
 
   let entries: Entry[] = [];
   let ssrLoaded = false;
@@ -24,8 +24,8 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
   try {
     const init = {
       headers: {
-        Authorization
-      }
+        Authorization,
+      },
     };
     const data = await getRecent({ init });
     entries = data;
@@ -34,9 +34,9 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
     if (e instanceof FetchError && e.code === 401) {
       return {
         redirect: {
-          destination: '/auth/login',
+          destination: "/auth/login",
           permanent: false,
-        }
+        },
       };
     }
   }
@@ -44,14 +44,14 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
   return {
     props: {
       entries,
-      ssrLoaded
-    }
+      ssrLoaded,
+    },
   };
 }
 
 interface EntriesProps {
-  entries: Entry[]
-  ssrLoaded: boolean
+  entries: Entry[];
+  ssrLoaded: boolean;
 }
 
 const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
@@ -62,7 +62,7 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
   async function loadData() {
     try {
       setLoading(true);
-      const data: Entry[] = await getRecent({ withAuth: true});
+      const data: Entry[] = await getRecent({ withAuth: true });
       setList(data);
     } catch {
       setFailed(true);
@@ -81,45 +81,35 @@ const Entries = ({ entries, ssrLoaded }: EntriesProps) => {
     <BlogPage {...meta}>
       <Stack>
         <h1>Entries</h1>
-        <PrefetchedLink href="/posts">
-          Posts
-        </PrefetchedLink>
-        <PrefetchedLink href="/journal/new">
-          Create
-        </PrefetchedLink>
-        {loading &&
-          <p>Loading</p>
-        }
-        {failed &&
+        <PrefetchedLink href="/posts">Posts</PrefetchedLink>
+        <PrefetchedLink href="/journal/new">Create</PrefetchedLink>
+        {loading && <p>Loading</p>}
+        {failed && (
           <>
             <p>There was an error</p>
             <button>Retry</button>
           </>
-        }
-        {!failed && !loading && !list.length &&
+        )}
+        {!failed && !loading && !list.length && (
           <p>Your entries will appear here</p>
-        }
-        {!failed && !loading && list.length &&
+        )}
+        {!failed && !loading && list.length && (
           <StaggeredList>
-            {
-              list.map(({ EntryBody, EntryId }) => (
-                <Stack key={EntryBody}>
-                  <p>
-                    {EntryBody}
-                  </p>
-                  <Cluster>
-                    <PrefetchedLink href={`/journal/${EntryId}`}>
-                      Edit
-                    </PrefetchedLink>
-                    <PrefetchedLink href={`/journal/${EntryId}/delete`}>
-                      Delete
-                    </PrefetchedLink>
-                  </Cluster>
-                </Stack>
-              ))
-            }
+            {list.map(({ EntryBody, EntryId }) => (
+              <Stack key={EntryBody}>
+                <p>{EntryBody}</p>
+                <Cluster>
+                  <PrefetchedLink href={`/journal/${EntryId}`}>
+                    Edit
+                  </PrefetchedLink>
+                  <PrefetchedLink href={`/journal/${EntryId}/delete`}>
+                    Delete
+                  </PrefetchedLink>
+                </Cluster>
+              </Stack>
+            ))}
           </StaggeredList>
-        }
+        )}
       </Stack>
     </BlogPage>
   );

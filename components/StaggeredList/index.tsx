@@ -1,4 +1,4 @@
-import { useTrail, animated, to } from '@react-spring/web';
+import { useTrail, animated, to } from "@react-spring/web";
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
@@ -10,7 +10,7 @@ export const StaggeredList = ({ children }: { children: JSX.Element[] }) => {
       y: 0,
     },
     opacity: 1,
-    y: 1
+    y: 1,
   });
 
   return (
@@ -20,16 +20,16 @@ export const StaggeredList = ({ children }: { children: JSX.Element[] }) => {
           key={index}
           style={{
             ...rest,
-            transform: to([y], y => `scaleY(${y})`),
+            transform: to([y], (y) => `scaleY(${y})`),
             transformOrigin: "top",
             overflow: "hidden",
-            position: "relative"
+            position: "relative",
           }}
         >
           <animated.div
             style={{
               transformOrigin: "top",
-              transform: to([y], y => `scaleY(${1 / y})`)
+              transform: to([y], (y) => `scaleY(${1 / y})`),
             }}
           >
             {children[index]}

@@ -179,18 +179,18 @@ const checkValidation = (value, validation) => {
   }
 };
 const monthToShortMon = {
-  "1": "Jan",
-  "2": "Feb",
-  "3": "Mar",
-  "4": "Apr",
-  "5": "May",
-  "6": "Jun",
-  "7": "Jul",
-  "8": "Aug",
-  "9": "Sep",
-  "10": "Oct",
-  "11": "Nov",
-  "12": "Dec",
+  1: "Jan",
+  2: "Feb",
+  3: "Mar",
+  4: "Apr",
+  5: "May",
+  6: "Jun",
+  7: "Jul",
+  8: "Aug",
+  9: "Sep",
+  10: "Oct",
+  11: "Nov",
+  12: "Dec",
 };
 const invalidDateStr = "Invalid Date";
 export function formatDate(date, dateFormat) {
@@ -235,7 +235,7 @@ export function formatTime(time, timeFormat) {
   const splitSeconds = splitTime[2].split(".");
   validTime.setSeconds(
     Number.parseInt(splitSeconds[0], 10),
-    Number.parseInt(splitSeconds[1], 10)
+    Number.parseInt(splitSeconds[1], 10),
   );
   if (validTime.toString() === invalidDateStr) {
     return time;

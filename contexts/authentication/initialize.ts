@@ -1,8 +1,14 @@
-import awsconfig from '../../aws-exports';
-import Amplify from '@aws-amplify/core';
+import awsconfig from "../../aws-exports";
+import Amplify from "@aws-amplify/core";
 
-const stage = (process.env.NEXT_PUBLIC_STAGE && process.env.NEXT_PUBLIC_STAGE !== "null") ? `${process.env.NEXT_PUBLIC_STAGE}.` : ``;
-const port = (process.env.NEXT_PUBLIC_PORT && process.env.NEXT_PUBLIC_PORT !== "null") ? `:${process.env.NEXT_PUBLIC_PORT}` : ``;
+const stage =
+  process.env.NEXT_PUBLIC_STAGE && process.env.NEXT_PUBLIC_STAGE !== "null"
+    ? `${process.env.NEXT_PUBLIC_STAGE}.`
+    : ``;
+const port =
+  process.env.NEXT_PUBLIC_PORT && process.env.NEXT_PUBLIC_PORT !== "null"
+    ? `:${process.env.NEXT_PUBLIC_PORT}`
+    : ``;
 const redirectStem = `https://${stage}aleks.tech${port}`;
 const redirectSignIn = redirectStem + `/auth/oauth`;
 const redirectSignOut = redirectStem + `/auth/logout`;
@@ -32,14 +38,14 @@ export const config = {
     // Note: if the secure flag is set to true, then the cookie transmission requires a secure protocol
     cookieStorage: {
       // REQUIRED - Cookie domain (only required if cookieStorage is provided)
-      domain: '.aleks.tech',
+      domain: ".aleks.tech",
       // OPTIONAL - Cookie path
-      path: '/',
+      path: "/",
       // OPTIONAL - Cookie expiration in days
       expires: 365,
       // OPTIONAL - Cookie secure flag
       // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
-      secure: true
+      secure: true,
     },
 
     // OPTIONAL - customized storage object
@@ -57,9 +63,9 @@ export const config = {
       scope: ["email", "profile", "openid"],
       redirectSignIn,
       redirectSignOut,
-      responseType: "code" // or 'token', note that REFRESH token will only be generated when the responseType is code
-    }
-  }
+      responseType: "code", // or 'token', note that REFRESH token will only be generated when the responseType is code
+    },
+  },
 };
 
 export const merged = {
@@ -70,10 +76,10 @@ export const merged = {
     redirectSignIn: config.Auth.oauth.redirectSignIn,
     redirectSignOut: config.Auth.oauth.redirectSignOut,
     domain: "auth.aleks.tech",
-  }
-}
+  },
+};
 
-const initializeAmplify = () => { 
+const initializeAmplify = () => {
   Amplify.configure(merged);
 };
 

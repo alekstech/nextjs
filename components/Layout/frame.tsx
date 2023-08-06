@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 const StyledFrame = styled.div<Props>`
   display: block;
   position: relative;
-  padding-bottom: ${props => {
+  padding-bottom: ${(props) => {
     const ratio = (props.ratio && props.ratio.split(":")) || "";
     return `calc(${ratio[1]} / ${ratio[0]} * 100%)`;
   }};
@@ -41,7 +41,7 @@ export const Frame: React.FC<Props> = ({
 }) => {
   const props = {
     ratio,
-    ...rest
+    ...rest,
   };
   if (React.Children.count(children) > 1) {
     console.warn("<Frame /> elements should have just one child");

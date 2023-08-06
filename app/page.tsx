@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
+import type { NextPage } from "next";
 // import Head from 'next/head';
 // import PrefetchedLink from '../components/PrefetchedLink';
 // import ColorPalette from '../components/ColorPalette';
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 // import Cluster from '../components/Layout/cluster';
 // import Header from '../components/Header';
-import { randomColor } from 'acme-utils';
+import { randomColor } from "acme-utils";
 
 const MonkSkintoneScale = [
   "#f6ede4",
@@ -17,7 +17,7 @@ const MonkSkintoneScale = [
   "#825c43",
   "#604134",
   "#3a312a",
-  "#292420"
+  "#292420",
 ];
 
 const Home: NextPage = () => {
@@ -34,15 +34,11 @@ const Home: NextPage = () => {
       <Header className={styles.header} /> */}
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Aleks Sobieraj
-        </h1>
+        <h1 className={styles.title}>Aleks Sobieraj</h1>
 
         {/* <ColorPalette colors={MonkSkintoneScale} /> */}
 
-        <p className={styles.description}>
-          web developer
-        </p>
+        <p className={styles.description}>web developer</p>
 
         <p>Toronto</p>
       </main>
@@ -54,7 +50,6 @@ const Home: NextPage = () => {
           </PrefetchedLink>
         </Cluster> */}
       </footer>
-
     </div>
   );
 };

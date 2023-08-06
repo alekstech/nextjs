@@ -14,7 +14,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 const SwitcherContainer = styled.div<Props>(
-  props => `
+  (props) => `
     display: block;
 
     & > * {
@@ -33,7 +33,7 @@ const SwitcherContainer = styled.div<Props>(
     & > * > :nth-last-child(n+${props.limit && props.limit + 1}),
     & > * > :nth-last-child(n+${props.limit && props.limit + 1}) ~ * {
         flex-basis: 100%;
-    }`
+    }`,
 );
 
 export const Switcher: React.FC<Props> = ({
@@ -47,7 +47,7 @@ export const Switcher: React.FC<Props> = ({
   const props = {
     space: getAdjustedSpace(space),
     threshold,
-    limit
+    limit,
   };
 
   return (

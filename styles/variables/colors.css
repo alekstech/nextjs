@@ -1,7 +1,6 @@
 :root {
-
   /* Colors */
-  --transparent: 'transparent';
+  --transparent: "transparent";
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
 
@@ -107,5 +106,4 @@
 
   --text-color: var(--gray-900);
   --text-color: var(--white);
-
 }

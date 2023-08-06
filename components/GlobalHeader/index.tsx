@@ -1,32 +1,28 @@
-'use client'
-import React, { useId } from 'react';
-import ALogo from './ALogo';
+"use client";
+import React, { useId } from "react";
+import ALogo from "./ALogo";
 import { useAuthState } from "../../contexts/authentication";
-import { Auth } from 'aws-amplify';
-import { Menu } from '@headlessui/react'
-import Link from 'next/link';
+import { Auth } from "aws-amplify";
+import { Menu } from "@headlessui/react";
+import Link from "next/link";
 
-const GlobalHeader = ({ className } : { className?: string }): JSX.Element => {
+const GlobalHeader = ({ className }: { className?: string }): JSX.Element => {
   return (
     <Menu>
-      <Menu.Button className="h-12 w-12" id="global-header--menu-button">A</Menu.Button>
+      <Menu.Button className="h-12 w-12" id="global-header--menu-button">
+        A
+      </Menu.Button>
       <Menu.Items>
         <Menu.Item>
           {({ active }) => (
-            <Link
-              className={`${active && 'bg-blue-500'}`}
-              href="/"
-            >
+            <Link className={`${active && "bg-blue-500"}`} href="/">
               Home
             </Link>
           )}
         </Menu.Item>
         <Menu.Item>
           {({ active }) => (
-            <Link
-              className={`${active && 'bg-blue-500'}`}
-              href="/blog"
-            >
+            <Link className={`${active && "bg-blue-500"}`} href="/blog">
               Blog
             </Link>
           )}

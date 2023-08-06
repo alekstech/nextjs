@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import styles from './styles.module.css';
+import Link from "next/link";
+import styles from "./styles.module.css";
 
 type Props = {
   href: string;
   children: React.ReactNode;
   block?: boolean;
-}
+};
 
 export const PrefetchedLink = ({ href, children, block }: Props) => {
-  let classes = '';
+  let classes = "";
   if (block) {
     classes = styles.block;
   }

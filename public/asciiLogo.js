@@ -13,6 +13,6 @@ const asciiLogo = `
 ..oooooo.............oooooo..
 .oooooo...............oooooo.
 ..oooo.................oooo..
-`
+`;
 
 export default asciiLogo;
