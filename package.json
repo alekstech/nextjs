@@ -10,7 +10,8 @@
     "telemetry": "next telemetry",
     "info": "next info",
     "dev": "next dev -p 3001",
-    "proxy": "node ./server/asdf.js"
+    "proxy": "node ./server/asdf.js",
+    "prettier": "npm run prettier . --write"
   },
   "workspaces": [
     "packages/*"
@@ -60,9 +61,11 @@
     "cssnano": "^6.0.1",
     "encoding": "^0.1.13",
     "eslint": "^8.7.0",
+    "eslint-config-prettier": "^9.0.0",
     "http-proxy": "^1.18.1",
     "nodemon": "^2.0.15",
     "postcss": "^8.4.27",
+    "prettier": "3.0.1",
     "ts-node": "^10.4.0",
     "typescript": "^5.1.6"
   }
