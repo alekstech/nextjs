@@ -3,4 +3,12 @@
 
   display: grid;
   grid-template-rows: min-content auto;
+
+  background-color: var(--sand-1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .body {
+    background-color: var(--sand-12);
+  }
 }

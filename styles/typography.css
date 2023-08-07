@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
+:root {
+  --text-color: var(--sand-12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: var(--sand-1);
+  }
+}
+
 body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;

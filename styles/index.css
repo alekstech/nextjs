@@ -6,8 +6,6 @@
 
 @import "accessibility.css";
 
-@import "theme.css";
-
 @import "typography.css";
 
 @import "./elements/button.css";

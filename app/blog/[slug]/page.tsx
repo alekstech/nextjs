@@ -80,8 +80,6 @@ export default async function Page({ params: { slug } }: { params: Params }) {
           <time className="text-sm text-gray-700">
             {data.date.toISOString()}
           </time>
-
-          <h1 className="mt-1">{data.title}</h1>
         </header>
 
         <MDXRemote source={content} />
