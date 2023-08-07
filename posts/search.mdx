@@ -1,0 +1,27 @@
+---
+title: Search
+date: 2023-08-06
+---
+
+# Search
+
+Search would be useful
+
+- for /blog/\* pages
+- for recipes
+
+Implementation options
+
+- for blog pages
+
+  - either
+    - at build time, extract contents of all posts and send them to Algolia
+    - add a search box
+  - or
+    - at build time, submit blog posts to CloudSearch and delete removed posts
+    - on input, query CloudSearch
+
+- for recipes
+  - configure DynamoDB as CloudSearch source
+  - ensure user isolation
+  - on input, query CloudSearch

@@ -6,5 +6,6 @@ const buildEslintCommand = (filenames) =>
     .join(" --file ")}`;
 
 export default {
-  "*.{js,jsx,ts,tsx,mdx}": [buildEslintCommand, "npm run prettier"],
+  "*.{js,jsx,ts,tsx}": [buildEslintCommand],
+  "*.{js,jsx,ts,tsx,mdx,css}": ["npm run prettier"],
 };

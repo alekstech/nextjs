@@ -24,33 +24,15 @@ const Home: NextPage = () => {
   const color = randomColor();
 
   return (
-    <div className={styles.container}>
-      {/* <Head>
-        <title>Aleks Sobieraj</title>
-        <meta name="description" content="Aleks Sobieraj, web developer" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <main className={styles.main}>
+      <h1 className={styles.title}>Aleks Sobieraj</h1>
 
-      <Header className={styles.header} /> */}
+      {/* <ColorPalette colors={MonkSkintoneScale} /> */}
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Aleks Sobieraj</h1>
+      <p className={styles.description}>web developer</p>
 
-        {/* <ColorPalette colors={MonkSkintoneScale} /> */}
-
-        <p className={styles.description}>web developer</p>
-
-        <p>Toronto</p>
-      </main>
-
-      <footer className={styles.footer} style={{ borderTopColor: color }}>
-        {/* <Cluster justify="space-around">
-          <PrefetchedLink href="/blog/portfolio">
-            About
-          </PrefetchedLink>
-        </Cluster> */}
-      </footer>
-    </div>
+      <p>Toronto</p>
+    </main>
   );
 };
 

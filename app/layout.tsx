@@ -3,6 +3,7 @@ import { Amplify, Auth } from "aws-amplify";
 import { merged } from "../contexts/authentication/initialize";
 import Link from "next/link";
 import GlobalHeader from "../components/GlobalHeader";
+import styles from "./layout.module.css";
 
 Amplify.configure(merged);
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={styles.body}>
         <GlobalHeader />
         {children}
       </body>

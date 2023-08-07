@@ -8,30 +8,32 @@ import Link from "next/link";
 
 const GlobalHeader = ({ className }: { className?: string }): JSX.Element => {
   return (
-    <Menu>
-      <Menu.Button className="h-12 w-12" id="global-header--menu-button">
-        A
-      </Menu.Button>
-      <Menu.Items>
-        <Menu.Item>
-          {({ active }) => (
-            <Link className={`${active && "bg-blue-500"}`} href="/">
-              Home
-            </Link>
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <Link className={`${active && "bg-blue-500"}`} href="/blog">
-              Blog
-            </Link>
-          )}
-        </Menu.Item>
-        <Menu.Item disabled>
-          <span>Log in</span>
-        </Menu.Item>
-      </Menu.Items>
-    </Menu>
+    <header>
+      <Menu>
+        <Menu.Button className="h-12 w-12" id="global-header--menu-button">
+          A
+        </Menu.Button>
+        <Menu.Items>
+          <Menu.Item>
+            {({ active }) => (
+              <Link className={`${active && "bg-blue-500"}`} href="/">
+                Home
+              </Link>
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <Link className={`${active && "bg-blue-500"}`} href="/blog">
+                Blog
+              </Link>
+            )}
+          </Menu.Item>
+          <Menu.Item disabled>
+            <span>Log in</span>
+          </Menu.Item>
+        </Menu.Items>
+      </Menu>
+    </header>
   );
 };
 
