@@ -1,6 +1,7 @@
 a {
   text-decoration-skip-ink: auto;
   text-decoration-color: var(--link-color);
+  text-decoration-thickness: 1px;
 }
 
 a:link {
@@ -12,4 +13,5 @@ a:hover,
 a:active {
   color: var(--link-visited-color);
   text-decoration-color: var(--text-color);
+  text-decoration-thickness: initial;
 }

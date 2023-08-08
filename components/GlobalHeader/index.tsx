@@ -12,7 +12,10 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 const GlobalHeader = () => {
   return (
     <header className={styles.header}>
-      <Link href="/">A</Link>
+      <Link href="/" className={styles.logo}>
+        <span className="visually-hidden">Home</span>
+        <ALogo />
+      </Link>
 
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
@@ -31,12 +34,11 @@ const GlobalHeader = () => {
                 Blog
               </Link>
             </DropdownMenu.Item>
-            <DropdownMenu.Item className={styles.DropdownMenuItem} disabled>
+            <DropdownMenu.Item className={styles.DropdownMenuItem}>
               <Link href="/login" className={styles.link}>
                 Log in
               </Link>
             </DropdownMenu.Item>
-            {/* <DropdownMenu.Arrow className={styles.DropdownMenuArrow} /> */}
           </DropdownMenu.Content>
         </DropdownMenu.Portal>
       </DropdownMenu.Root>

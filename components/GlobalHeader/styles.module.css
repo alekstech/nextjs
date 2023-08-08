@@ -4,8 +4,12 @@
   justify-content: space-between;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
 .DropdownMenuContent {
-  border: 1px solid var(--sand-1);
+  background-color: var(--sand-a2);
   min-width: 20ch;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -28,12 +32,8 @@
   user-select: none;
   outline: none;
 }
-.DropdownMenuItem[data-disabled] {
-  color: var(--sand-8);
-  pointer-events: none;
-}
 .DropdownMenuItem[data-highlighted] {
-  background-color: var(--amber-a4);
+  background-color: var(--amber-a1);
 }
 
 .link {

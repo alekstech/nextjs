@@ -4,7 +4,7 @@ import { merged } from "../contexts/authentication/initialize";
 import Link from "next/link";
 import GlobalHeader from "../components/GlobalHeader";
 import styles from "./layout.module.css";
-
+import ThemeSetter from "../components/ThemeSetter";
 Amplify.configure(merged);
 
 export const metadata = {
@@ -19,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <ThemeSetter />
       <body className={styles.body}>
         <GlobalHeader />
         {children}

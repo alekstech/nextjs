@@ -1,10 +1,10 @@
 button,
 a.button {
-  background-color: var(--button-background);
-  border-color: var(--button-text);
+  border-color: transparent;
   border-style: solid;
   border-width: var(--s-6);
-  color: var(--button-text);
+  background-color: var(--button-background);
+  color: var(--text-color);
   font-family: inherit;
   font-size: var(--font-size-0);
   line-height: inherit;
@@ -25,6 +25,5 @@ button:hover,
 button:active,
 a.button:hover,
 a.button:active {
-  background-color: var(--button-text);
-  color: var(--button-background);
+  border-color: var(--sand-a12);
 }
