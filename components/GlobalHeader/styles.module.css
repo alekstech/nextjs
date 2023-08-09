@@ -9,7 +9,7 @@
   align-items: center;
 }
 .DropdownMenuContent {
-  background-color: var(--sand-a2);
+  background-color: var(--sand-1);
   min-width: 20ch;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);

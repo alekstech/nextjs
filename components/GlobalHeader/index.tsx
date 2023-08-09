@@ -1,5 +1,5 @@
 "use client";
-import React, { useId } from "react";
+import React, { useId, useEffect } from "react";
 import ALogo from "./ALogo";
 import { useAuthState } from "../../contexts/authentication";
 import { Auth } from "aws-amplify";
@@ -19,7 +19,10 @@ const GlobalHeader = () => {
 
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
-          <button aria-label="Navigation menu">
+          <button
+            id="GlobalHeader-DropdownMenu-button"
+            aria-label="Navigation menu"
+          >
             <HamburgerMenuIcon />
           </button>
         </DropdownMenu.Trigger>
@@ -29,12 +32,12 @@ const GlobalHeader = () => {
             className={styles.DropdownMenuContent}
             sideOffset={5}
           >
-            <DropdownMenu.Item className={styles.DropdownMenuItem}>
+            <DropdownMenu.Item className={styles.DropdownMenuItem} asChild>
               <Link href="/blog" className={styles.link}>
                 Blog
               </Link>
             </DropdownMenu.Item>
-            <DropdownMenu.Item className={styles.DropdownMenuItem}>
+            <DropdownMenu.Item className={styles.DropdownMenuItem} asChild>
               <Link href="/login" className={styles.link}>
                 Log in
               </Link>
