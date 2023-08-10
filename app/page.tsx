@@ -7,22 +7,21 @@ import styles from "./styles.module.css";
 // import Header from '../components/Header';
 import { randomColor } from "acme-utils";
 
-const MonkSkintoneScale = [
-  "#f6ede4",
-  "#f3e7db",
-  "#f7ead0",
-  "#eadaba",
-  "#d7bd96",
-  "#a07e56",
-  "#825c43",
-  "#604134",
-  "#3a312a",
-  "#292420",
-];
+// const MonkSkintoneScale = [
+//   "#f6ede4",
+//   "#f3e7db",
+//   "#f7ead0",
+//   "#eadaba",
+//   "#d7bd96",
+//   "#a07e56",
+//   "#825c43",
+//   "#604134",
+//   "#3a312a",
+//   "#292420",
+// ];
+// const color = randomColor();
 
 const Home: NextPage = () => {
-  const color = randomColor();
-
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>Aleks Sobieraj</h1>

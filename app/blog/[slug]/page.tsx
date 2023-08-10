@@ -10,7 +10,9 @@ const postsPath = join(process.cwd(), "/posts");
 type Params = { slug: string };
 
 export async function generateStaticParams(): Promise<Params[]> {
-  return (await fs.readdir(postsPath)).map((slug) => ({ slug }));
+  const paths = await fs.readdir(postsPath);
+  const slugs = paths.map((slug) => ({ slug: slug }));
+  return slugs;
 }
 
 export async function generateMetadata({
@@ -40,7 +42,7 @@ export async function generateMetadata({
 }
 
 async function getPost(slug: string) {
-  const postPath = join(postsPath, `${slug}.mdx`);
+  const postPath = join(postsPath, `${slug}`);
   const postItem = await fs.readFile(postPath, "utf-8");
 
   const { content, data } = matter(postItem);
@@ -51,13 +53,18 @@ async function getPost(slug: string) {
   };
 }
 
-const JsonLd = ({ data }) => {
+type SchemaData = {
+  title?: string;
+  date?: Date;
+};
+
+const JsonLd = ({ data }: { data: SchemaData }) => {
   const schemaData = {
     "@context": "http://schema.org",
     "@type": "NewsArticle",
-    headline: `${data.title}`,
     image: "https://www.aleks.tech/logo.svg",
-    datePublished: `${data.date}`,
+    ...(data.title ? { headline: data.title } : {}),
+    ...(data.date ? { datePublished: data.date } : {}),
   };
 
   return (

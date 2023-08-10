@@ -1,10 +1,8 @@
 import "../styles/index.css";
-import { Amplify, Auth } from "aws-amplify";
+import { Amplify } from "aws-amplify";
 import { merged } from "../contexts/authentication/initialize";
-import Link from "next/link";
 import GlobalHeader from "../components/GlobalHeader";
 import styles from "./layout.module.css";
-import ThemeSetter from "../components/ThemeSetter";
 Amplify.configure(merged);
 
 export const metadata = {

@@ -41,7 +41,7 @@ const Home: NextPage<ComponentProps> = ({ color }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <GlobalHeader className={styles.header} />
+      <GlobalHeader />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Aleks Sobieraj</h1>

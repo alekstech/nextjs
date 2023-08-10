@@ -1,9 +1,6 @@
 "use client";
-import React, { useId, useEffect } from "react";
+import React from "react";
 import ALogo from "./ALogo";
-import { useAuthState } from "../../contexts/authentication";
-import { Auth } from "aws-amplify";
-import { Menu } from "@headlessui/react";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";

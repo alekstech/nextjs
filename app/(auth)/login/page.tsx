@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { Amplify, Auth } from "aws-amplify";
-import { merged } from "../../../contexts/authentication/initialize";
+import { Auth } from "aws-amplify";
 
 // Amplify.configure(merged)
 type SignInParameters = {
@@ -9,7 +8,7 @@ type SignInParameters = {
   password: string;
 };
 
-export async function signIn({ username, password }: SignInParameters) {
+async function signIn({ username, password }: SignInParameters) {
   try {
     const user = await Auth.signIn(username, password);
     console.log("signed in");
