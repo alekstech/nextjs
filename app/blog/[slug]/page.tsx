@@ -42,7 +42,8 @@ export async function generateMetadata({
 }
 
 async function getPost(slug: string) {
-  const postPath = join(postsPath, `${slug}`);
+  const fileName = slug.endsWith(".mdx") ? slug : `${slug}.mdx`;
+  const postPath = join(postsPath, fileName);
   const postItem = await fs.readFile(postPath, "utf-8");
 
   const { content, data } = matter(postItem);
