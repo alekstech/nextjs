@@ -1,5 +1,12 @@
+:root {
+  --outline: var(--sand-12);
+  --outline-width: 1px;
+}
+
 *:focus {
-  outline: var(--outline);
+  outline-color: var(--outline);
+  outline-width: var(--outline-width);
+  outline-style: dotted;
 }
 
 a[href],

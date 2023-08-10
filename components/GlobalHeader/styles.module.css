@@ -5,11 +5,13 @@
 }
 
 .logo {
+  padding: 0 var(--s-1);
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .DropdownMenuContent {
-  background-color: var(--sand-1);
+  background-color: var(--sand-2);
   min-width: 20ch;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);

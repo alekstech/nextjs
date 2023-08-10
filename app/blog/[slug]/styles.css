@@ -1,0 +1,29 @@
+article {
+  max-width: 60ch;
+  margin: 0 auto var(--s2) auto;
+}
+
+article header time {
+  width: 100%;
+  display: block;
+  text-align: right;
+  font-size: 0.8em;
+}
+
+p,
+ul,
+ol {
+  margin-top: var(--s1);
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-top: var(--s-1);
+}
+
+p + ul,
+p + ol {
+  margin-top: var(--s-1);
+}

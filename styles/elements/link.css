@@ -1,17 +1,15 @@
 a {
+  color: var(--text-color);
   text-decoration-skip-ink: auto;
-  text-decoration-color: var(--link-color);
+  text-decoration-color: var(--sand-11);
   text-decoration-thickness: 1px;
-}
-
-a:link {
-  color: var(--link-color);
+  text-underline-offset: 3px;
 }
 
 a:visited,
 a:hover,
 a:active {
-  color: var(--link-visited-color);
+  color: var(--text-color);
   text-decoration-color: var(--text-color);
   text-decoration-thickness: initial;
 }

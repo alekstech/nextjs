@@ -77,9 +77,7 @@ export default async function Page({ params: { slug } }: { params: Params }) {
 
       <article className="prose prose-img:rounded-lg mx-auto">
         <header>
-          <time className="text-sm text-gray-700">
-            {data.date.toISOString()}
-          </time>
+          <time>{data.date.toLocaleDateString()}</time>
         </header>
 
         <MDXRemote source={content} />
