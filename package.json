@@ -11,7 +11,7 @@
     "info": "next info",
     "dev": "next dev -p 3001",
     "proxy": "node ./server/asdf.js",
-    "prettier": "prettier . --write",
+    "prettier": "prettier .",
     "prepare": "is-ci || husky install"
   },
   "workspaces": [
