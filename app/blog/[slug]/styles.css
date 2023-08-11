@@ -12,7 +12,8 @@ article header time {
 
 p,
 ul,
-ol {
+ol,
+pre {
   margin-top: var(--s1);
 }
 
@@ -26,4 +27,9 @@ ol ul {
 p + ul,
 p + ol {
   margin-top: var(--s-1);
+}
+
+pre {
+  background-color: var(--sand-2);
+  padding: var(--s-1);
 }

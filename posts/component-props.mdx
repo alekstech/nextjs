@@ -1,0 +1,28 @@
+---
+title: Component props
+date: 2023-08-11
+---
+
+# Component props
+
+1. Extend props of an HTML element with custom props
+
+```
+import { ComponentProps } from "react";
+type ButtonProps = ComponentProps<"button"> & {
+  size: "small" | "default"
+};
+```
+
+2. Infer prop types from the definition of a component
+
+```
+const SubmitButton = (props: { onClick: () => void }) => {
+  return <button onClick={props.onClick}>Submit</button>;
+};
+type SubmitButtonProps = ComponentProps<
+  typeof SubmitButton
+>;
+```
+
+[Source](https://www.totaltypescript.com/react-component-props-type-helper)
