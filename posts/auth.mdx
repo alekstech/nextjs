@@ -1,0 +1,36 @@
+---
+title: Auth
+date: 2023-08-10
+---
+
+# Auth
+
+Authentication states
+
+- logged in
+  - MFA settings
+  - email
+  - nickname
+  - other
+- logged out
+  - register
+    - exists error
+    - other error
+    - success
+  - confirm
+    - resend confirmation
+    - enter confirmation
+  - log in
+    - WebAuthn
+      - passkey
+      - password
+        - no MFA
+        - MFA
+          - passkey
+          - other
+      - recovery after lost device
+      - adding / removing devices
+    - federated
+      - MFA
+    - own
+      - MFA
