@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif&display=block");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=block");
 
 :root {
   --text-color: var(--sand-12);
