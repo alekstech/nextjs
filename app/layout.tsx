@@ -38,6 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={scriptContent} />
+        <link rel="preconnect" href="https://paywall.sophi.io/health" />
       </head>
 
       <body className={styles.body}>
